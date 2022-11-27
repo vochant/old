@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IMC.RE MC-Online</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Eaglercraft 我的世界网页版可以让您在浏览器中直接体验我的世界的游戏内容，您甚至可以和朋友一同在服务器中共同联机！本网页MC汉化版由IMC.RE提供。" />
+<meta name="keywords" content="网页版MC, 我的世界网页版, ws.imc.re, 游戏, eaglercraft, 我的世界, minecraft" />
+<meta name="author" content="lax1dude, gg66, SummerGoro" />
+<meta property="og:title" content="Eaglercraft" />
+<meta property="og:locale" content="zh-CN" />
+<meta property="og:type" content="website" />
+
+<meta property="og:description" content="Eaglercraft is real Minecraft 1.5.2 that you can play in any regular web browser. That includes school chromebooks, it works on all chromebooks. It supports both singleplayer and multiplayer with no extensions." />
+
+<script type="text/javascript" src="eagswebrtc.js"></script>
+
+<script type="text/javascript" src="classes.js"></script>
+<script type="text/javascript">
+if(document.location.href.startsWith("file:")) {
+alert("You're not supposed to 'open' this file in your browser. Please upload this folder to your HTTP(s) server and access it via the internet. This is not a bug, please read the documentation");
+}else {
+window.addEventListener("load", async function(){
+/*
+let wardUrl = "";
+try {
+  wardUrl = (await (await fetch("https://pipedapi.tokhmi.xyz/streams/5VuDwU4bW8Q")).json()).audioStreams[0].url;
+} catch (e) {}
+*/
+const relayId = Math.floor(Math.random() * 3);
+window.eaglercraftOpts = {
+container: "game_frame", assetsURI: "assets.epk", serverWorkerURI: "worker_bootstrap.js", worldsFolder: "TEST",
+assetOverrides: {
+    // "title/no-pano-blur.flag": "",
+	"records/wait.mp3": "wait.mp3",
+	"records/mellohi.mp3": "https://stream.nightride.fm/chillsynth.m4a",
+	"records/far.mp3": "https://stream.nightride.fm/nightride.m4a",
+	"records/cat.mp3": "http://usa9.fastcast4u.com/proxy/jamz?mp=/1",
+	"records/ward.mp3": "http://fr4.1mix.co.uk:8000/192h",
+	"records/strad.mp3": "http://listen.011fm.com:8028/stream15",
+	"records/blocks.mp3": "https://www.ophanim.net:8444/s/9780",
+	"records/13.mp3": "https://s2.radio.co/s2b2b68744/listen"
+	// "sounds/gta.mp3": "https://invidious.zapashcanon.fr/latest_version?itag=251&id=YRlIl6K6S88"
+	// "records/ward.mp3": wardUrl
+	// "sounds/gta.mp3": ""
+},
+servers: [
+	{ serverName: "IMC.RE", serverAddress: "wss://play.imc.re:441/server", hideAddress: true },
+	{ serverName: "IMC CF", serverAddress: "wss://ws.imc.re/server", hideAddress: false }
+],
+serverListTitle: "IMC.RE 多人游戏",
+serverListLink: "https://mcs.imc.re/",
+relays: [
+	{ addr: "wss://play.imc.re:441/relay", name: "IMC.RE relay #1", primary: relayId == 0 },
+	{ addr: "wss://relay.deev.is/", name: "lax1dude relay #1", primary: relayId == 1 },
+	{ addr: "wss://relay.lax1dude.net/", name: "lax1dude relay #2", primary: relayId == 2 },
+	{ addr: "wss://relay.shhnowisnottheti.me/", name: "ayunami relay #1", primary: relayId == 3 }
+],
+mainMenu: { splashes: [
+	"IMC.RE提供汉化", "Darviglet!", "eaglerenophile!", "You Eagler!", "Yeeeeeee!", "yeee",
+	"EEEEEEEEE!", "You Darvig!", "You Vigg!", ":>", "|>", "You Yumpster!", "Do you finished your homework?"
+	, "store.imc.re 创建服务器！", "你做完作业了吗？"
+], eaglerLogo: false }};
+(function(){
+var q = window.location.search;
+if(typeof q === 'string' && q.startsWith("?")) {
+	q = new URLSearchParams(q);
+	var s = q.get("server");
+	if(s) window.eaglercraftOpts.joinServer = s;
+}
+})();
+main();
+});}
+</script>
+
+<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+    new Crate({
+        server: '769348161470464001', // IMC.RE Discord
+        channel: '1012258700922208287' // #notice 1012281974041362452
+    })
+</script>
+</head>
+<body style="margin:0px;width:100vw;height:100vh;" id="game_frame">
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7676503929359e5e","version":"2022.11.0","r":1,"token":"3c9953b0a5e54aef93d172f8a1dd2682","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
