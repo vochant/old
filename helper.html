@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink mdui-appbar-with-toolbar">
+    <head>
+        <title>Vochantia</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
+        <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+        <script src="./web/js/index.js"></script>
+    </head>
+    <body class="mdui-loaded">
+        <header class="mdui-appbar mdui-appbar-fixed">
+            <div class="mdui-toolbar mdui-color-theme">
+                <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="./">
+                    <i class="mdui-icon material-icons">arrow_back</i>
+                </a>
+                <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target:'#main-drawer',swipe:true}">
+                    <i class="mdui-icon material-icons">menu</i>
+                </span>
+                <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="./">
+                    <i class="mdui-icon material-icons">home</i>
+                </a>
+                <a class="mdui-typo-title">帮助 - Vochantia</a>
+            </div>
+        </header>
+        <div class="mc-drawer mdui-drawer mdui-shadow-6 mdui-drawer-close" id="main-drawer">
+            
+            <div class="mdui-list">
+                <div class="mdui-subheader">主站</div>
+                <a class="mdui-list-item mdui-ripple" href="./">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="./ros/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">storage</i>
+                    <div class="mdui-list-item-content">存储</div>
+                </a>
+                <div class="mdui-divider"></div>
+                <a class="mdui-list-item mdui-ripple mdui-list-item-active" href="./helper">
+                    <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink">info</i>
+                    <div class="mdui-list-item-content">本站帮助</div>
+                </a>
+            </div>
+        </div>
+        <div class="mdui-container">
+            <div class="mdui-typo">
+                <h1 class="title mdui-text-color-theme">本站帮助<br><small>主要是用词方面的</small></h1>
+            </div>
+            <br><br>
+            <div class="mdui-typo">
+                <h4 class="article-title">空间占用</h4><br>
+                首先,1KB=1024B是<strong>错误</strong>的,<br>是微软的程序员为了方便简写<strong>KiB</strong>而产生的.<br>
+                在本站,我们严格使用标准进率,即:<br>
+		<code>1KiB=1024B 1MiB=1024KiB 1GiB=1024MiB...</code><br>
+                <code>1KB=1000B  1MB=1000KB   1GB=1000MB  ...</code><br>
+		另外,这里提供两种空间容量的换算:<br>
+                1.00KiB&lt;=&gt;1.02KB 0.98KiB&lt;=&gt;1.00KB<br>
+                1.00MiB&lt;=&gt;1.05MB 0.95MiB&lt;=&gt;1.00MB<br>
+                1.00GiB&lt;=&gt;1.07GB 0.93GiB&lt;=&gt;1.00GB<br>
+                1.00TiB&lt;=&gt;1.10TB 0.91TiB&lt;=&gt;1.00TB<br><br><br>
+                <h4 class="article-title">体系结构和位数</h4><br>
+                首先,x64是<strong>不存在</strong>的.<br>
+                位数称32bit和64bit<br>
+                因为早期的知名32位CPU都是80?86的格式命名的,所以这套指令集被称为x86<br>
+                后面又诞生了兼容x86的64位指令集,称x86_64.<br>
+                同样,x64右是一个微软程序员简写造成的误会,本网站不会使用x64这个词汇.<br><br><br>
+                <h4 class="article-title">存储目录</h4><br>
+                尽管存储目录是虚拟的,但是分类还是很有必要的.<br>
+                这里使用Linux的命名方法,在根目录(/)下建立分支,以'/'划分层次.<br>
+                原因嘛,很简单,真的没有什么盘符可以分配的啊!
+            </div>
+            <br><br><br>
+        </div>
+    </body>
+</html>
