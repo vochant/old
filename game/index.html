@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink mdui-appbar-with-toolbar">
+    <head>
+        <title>Vochantia</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
+        <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+        <script src="../web/js/index.js"></script>
+    </head>
+    <body class="mdui-loaded">
+        <header class="mdui-appbar mdui-appbar-fixed">
+            <div class="mdui-toolbar mdui-color-theme">
+                <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="../">
+                    <i class="mdui-icon material-icons">arrow_back</i>
+                </a>
+                <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target:'#main-drawer',swipe:true}">
+                    <i class="mdui-icon material-icons">menu</i>
+                </span>
+                <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="../">
+                    <i class="mdui-icon material-icons">home</i>
+                </a>
+                <a class="mdui-typo-title">游戏 - Vochantia</a>
+            </div>
+        </header>
+        <div class="mc-drawer mdui-drawer mdui-shadow-6 mdui-drawer-close" id="main-drawer">
+            
+            <div class="mdui-list">
+                <div class="mdui-subheader">游戏</div>
+                <a class="mdui-list-item mdui-ripple" href="./">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">launch</i>
+                    <div class="mdui-list-item-content">快速启动</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple mdui-list-item-active" href="./all">
+                    <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink">apps</i>
+                    <div class="mdui-list-item-content">其他</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="./tool">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">help</i>
+                    <div class="mdui-list-item-content">工具</div>
+                </a>
+                <div class="mdui-subheader">主站</div>
+                <a class="mdui-list-item mdui-ripple" href="../">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple mdui-list-item-active" href="../ros">
+                    <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink">storage</i>
+                    <div class="mdui-list-item-content">存储</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../links/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+                    <div class="mdui-list-item-content">链接</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="./">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">videogame_asset</i>
+                    <div class="mdui-list-item-content">游戏</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../blog/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">book</i>
+                    <div class="mdui-list-item-content">博客</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../gitalk/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">message</i>
+                    <div class="mdui-list-item-content">讨论</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../oi/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">code</i>
+                    <div class="mdui-list-item-content">信奥</div>
+                </a>
+                <div class="mdui-divider"></div>
+                <a class="mdui-list-item mdui-ripple" href="../helper">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                    <div class="mdui-list-item-content">本站帮助</div>
+                </a>
+            </div>
+        </div>
+        <div class="mdui-container">
+            <div class="mdui-typo">
+                <h1 class="title mdui-text-color-theme">快速启动<br><small>一些常用的内链</small></h1>
+            </div>
+            <br><br>
+            <div class="mdui-container">
+                <div class="mdui-card mdui-col-xs-5">
+                    <div class="mdui-card-media">
+                        <img src="../web/img/ec.jpeg"/>
+                        <div class="mdui-card-media-covered">
+                            <div class="mdui-card-primary">
+                                <div class="mdui-card-primary-title">Eaglercraft</div>
+                                <div class="mdui-card-primary-subtitle">1.5.2</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdui-card-actions">
+                        <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="../web/webapps/singleplayers">推荐</a>
+                        <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="../web/webapps/eaglercraft/">其他</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-container">
+                <div class="mdui-card mdui-col-xs-5">
+                    <div class="mdui-card-media">
+                        <img src="../web/img/ecbeta.jpeg"/>
+                        <div class="mdui-card-media-covered">
+                            <div class="mdui-card-primary">
+                                <div class="mdui-card-primary-title">Eaglercraft</div>
+                                <div class="mdui-card-primary-subtitle">Beta 1.3</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdui-card-actions">
+                        <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="../web/webapps/singleplayers_beta">推荐</a>
+                        <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="../web/webapps/eaglercraft_beta/">其他</a>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+        </div>
+    </body>
+</html>
