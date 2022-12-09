@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink mdui-appbar-with-toolbar">
+    <head>
+        <title>Vochantia</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
+        <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+        <script src="../web/js/index.js"></script>
+        <link rel="icon" href="../web/img/viahead.png">
+    </head>
+    <body class="mdui-loaded">
+        <header class="mdui-appbar mdui-appbar-fixed">
+            <div class="mdui-toolbar mdui-color-theme">
+                <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="./">
+                    <i class="mdui-icon material-icons">arrow_back</i>
+                </a>
+                <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target:'#main-drawer',swipe:true}">
+                    <i class="mdui-icon material-icons">menu</i>
+                </span>
+                <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="../">
+                    <i class="mdui-icon material-icons">home</i>
+                </a>
+                <a class="mdui-typo-title">游戏工具 - Vochantia</a>
+            </div>
+        </header>
+        <div class="mc-drawer mdui-drawer mdui-shadow-6 mdui-drawer-close" id="main-drawer">
+            
+            <div class="mdui-list">
+                <div class="mdui-subheader">游戏</div>
+                <a class="mdui-list-item mdui-ripple" href="./">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">launch</i>
+                    <div class="mdui-list-item-content">快速启动</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="./all">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">apps</i>
+                    <div class="mdui-list-item-content">其他</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple mdui-list-item-active" href="./tool">
+                    <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink">help</i>
+                    <div class="mdui-list-item-content">工具</div>
+                </a>
+                <div class="mdui-subheader">主站</div>
+                <a class="mdui-list-item mdui-ripple" href="../">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../ros">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">storage</i>
+                    <div class="mdui-list-item-content">存储</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../links/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+                    <div class="mdui-list-item-content">链接</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple mdui-list-item-active" href="./">
+                    <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink">videogame_asset</i>
+                    <div class="mdui-list-item-content">游戏</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../blog/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">book</i>
+                    <div class="mdui-list-item-content">博客</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../gitalk/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">message</i>
+                    <div class="mdui-list-item-content">讨论</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../oi/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">code</i>
+                    <div class="mdui-list-item-content">信奥</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../tools/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">apps</i>
+                    <div class="mdui-list-item-content">工具</div>
+                </a>
+                <div class="mdui-subheader">附加</div>
+                <a class="mdui-list-item mdui-ripple" href="../helper">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                    <div class="mdui-list-item-content">本站帮助</div>
+                </a>
+                <div class="mdui-divider"></div>
+            </div>
+        </div>
+        <div class="mdui-container">
+            <div class="mdui-typo">
+                <h1 class="title mdui-text-color-theme">游戏工具<br><small>网站</small></h1>
+            </div>
+            <br><br>
+            <div class="mdui-container mdui-col-xs-8">
+                <div class="mdui-card">
+                    <div class="mdui-card-media">
+                        <img src="../web/img/mcnav.jpeg"/>
+                        <div class="mdui-card-media-covered">
+                            <div class="mdui-card-primary">
+                                <div class="mdui-card-primary-title">MCNAV</div>
+                                <div class="mdui-card-primary-subtitle">另一个同类网站 有这里的很多内容和这里没有的内容</div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="mdui-card-actions">
+                        <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.mcnav.net">作者爱发电</a>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+           <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/pclii.jpg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">PCL 2</div>
+                                    <div class="mdui-card-primary-subtitle">与后两个合作 推荐启动器</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://afdian.net/@LTcat">作者爱发电</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/hmcl.jpg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">HMCL</div>
+                                    <div class="mdui-card-primary-subtitle">与前后合作 推荐启动器</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://hmcl.huangyuhui.net">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/bakaxl.jpg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">BakaXL</div>
+                                    <div class="mdui-card-primary-subtitle">与前两个合作 推荐启动器</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.bakaxl.com">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+           <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/betacraft.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">BetaCraft</div>
+                                    <div class="mdui-card-primary-subtitle">远古版专用</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://betacraft.uk">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/intoff.png"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">国际版官网</div>
+                                    <div class="mdui-card-primary-subtitle">全球通用!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.minecraft.net">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/cnoff.png"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">网易版官网</div>
+                                    <div class="mdui-card-primary-subtitle">请尊重胜诉迷你的官方</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://mc.163.com">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+           <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/mcapks.png"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">MCAPKS</div>
+                                    <div class="mdui-card-primary-subtitle">安卓版下载</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.mcapks.com">官方网站1</a>
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://xz.klpbbs.net">官方网站2</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/mbbsdl.png"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">通用平台下载</div>
+                                    <div class="mdui-card-primary-subtitle">Android/iOS/Windows10</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://mc.minebbs/com">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/pojav.png"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">PojavLauncher</div>
+                                    <div class="mdui-card-primary-subtitle">在安卓和苹果启动电脑版</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://pojavlauncher.net">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+           <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/hmclpe.png"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">HMCL PE</div>
+                                    <div class="mdui-card-primary-subtitle">安卓电脑版启动器推荐版本</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://wwc.lanzoub.com/iHhrl096qnch">蓝奏云</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/j8.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">Java 8</div>
+                                    <div class="mdui-card-primary-subtitle">远古-1.16</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.java.com">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/j16.jpg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">Java 16</div>
+                                    <div class="mdui-card-primary-subtitle">1.17</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html">下载页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/j17.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">Java 17</div>
+                                    <div class="mdui-card-primary-subtitle">1.18+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">下载页</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/sfe.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">简幻欢</div>
+                                    <div class="mdui-card-primary-subtitle">最推荐的VPS服务器来源</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://sfe.simpfun.cn/introduction/index.html">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/aternos.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">Aternos</div>
+                                    <div class="mdui-card-primary-subtitle">其中一个VPS服务器来源</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://aternos.org/:zh-CN/">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/pixelcloud.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">PixelCloud</div>
+                                    <div class="mdui-card-primary-subtitle">另一个VPS服务器来源</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://pixelcloud.cn/">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/virmach.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">Vicmach</div>
+                                    <div class="mdui-card-primary-subtitle">另一个多功能的VPS服务器来源</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="http://www.vpsxxs.com/virmachandminecraft/">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/pluginwiki.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">插件百科</div>
+                                    <div class="mdui-card-primary-subtitle">为数不多服务器插件的百科</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://mineplugin.org/%E9%A6%96%E9%A1%B5">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/mcwiki.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">Minecraft Wiki</div>
+                                    <div class="mdui-card-primary-subtitle">最著名的MCWiki</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki">官方(Fandom)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/bwiki.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">Minecraft Wiki</div>
+                                    <div class="mdui-card-primary-subtitle">由bilibili创建的镜像</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://wiki.biligame.com/mc/Minecraft_Wiki">B站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/newiki.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">我的世界Wiki</div>
+                                    <div class="mdui-card-primary-subtitle">网易自己的Wiki</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://mc.163.com/wikigrab/">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/mgwiki.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">Minecraft Wiki</div>
+                                    <div class="mdui-card-primary-subtitle">萌娘百科最知名的Wiki之一</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://zh.moegirl.org.cn/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C(%E6%B8%B8%E6%88%8F)#">萌娘百科</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/mcmod.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">MC百科</div>
+                                    <div class="mdui-card-primary-subtitle">最全的Mod说明和下载网站</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.mcmod.cn/">官方网站 3.0</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/aoawiki.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">虚无世界Wiki</div>
+                                    <div class="mdui-card-primary-subtitle">几乎是全MC最大的Mod</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://adventofascension.fandom.com/zh/wiki/Advent_of_Ascension_Wiki">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/mcbbs.png"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">我的世界中文论坛</div>
+                                    <div class="mdui-card-primary-subtitle">MCBBS</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.mcbbs.com/">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/mcmodbbs.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">百科社群</div>
+                                    <div class="mdui-card-primary-subtitle">MC百科的论坛</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://bbs.mcmod.cn/">MCMOD</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/nebbs.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">我的世界论坛</div>
+                                    <div class="mdui-card-primary-subtitle">网易自己的论坛</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://mc.netease.com/">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/klpbbs.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">苦力怕论坛</div>
+                                    <div class="mdui-card-primary-subtitle">基岩版狂喜</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.klpbbs.com/">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/minebbs.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">MineBBS</div>
+                                    <div class="mdui-card-primary-subtitle">另一个基岩版论坛和资源站</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.minebbs.com/">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/baidutieba.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">我的世界百度贴吧</div>
+                                    <div class="mdui-card-primary-subtitle">千万帖子百万用户</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://tieba.baidu.com/f?kw=minecraft">百度贴吧</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/recedit.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">合成表编辑器</div>
+                                    <div class="mdui-card-primary-subtitle">写Mod实用</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://hans000.github.io/mc-recipe-editor/">Pages</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/mcmodtools.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">百科工具集</div>
+                                    <div class="mdui-card-primary-subtitle">相信最好的Mod网站!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="https://www.mcmod.cn/tools/">B站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-container mdui-col-xs-4">
+                    <div class="mdui-card">
+                        <div class="mdui-card-media">
+                            <img src="../web/img/mcxz.jpeg"/>
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">我的世界中文下载站</div>
+                                    <div class="mdui-card-primary-subtitle">经典向网站</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="http://www.minecraftxz.com/">官方网站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+        </div>
+    </body>
+</html>
