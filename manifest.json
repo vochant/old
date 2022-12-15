@@ -1,0 +1,16 @@
+{
+    "name": "Vochantia",
+    "short_name": "Vochantia",
+    "display": "standalone",
+    "orientation": "landscape",
+    "start_url": "/",
+    "theme_color": "white",
+    "background_color": "white",
+    "icons": [
+        {
+            "src": "web/img/viahead.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+    ]
+}
