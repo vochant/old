@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN" class="mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink mdui-appbar-with-toolbar">
     <head>
@@ -12,7 +13,7 @@
         <script>
             var aid,bvid,cid,pageid;
             var aid1,bvid1,cid1,pageid1;
-            var errors="",failed="false";
+            var errors="",failed="false",baddr,ifh;
             var npa=/^[1-9]{1}[0-9]{0,}$/,bpa=/^BV[0-9a-zA-Z]{1,}$/
 
             function svproc()
@@ -145,6 +146,25 @@
             {
                 document.getElementById('ifhost').innerHTML=document.getElementById('ht').value;
             }
+
+            function svexp()
+            {
+                baddr=document.getElementById('bli').value;
+                document.getElementById('ifhost').innerHTML='<iframe src="'+baddr+'" border="0" frameborder="no" framespacing="0" allowfullscreen="true" sandbox="allow-forms allow-scripts allow-same-origin allow-popups"></iframe>';
+                ifh=document.getElementById('ifhost');
+                var ifload=function(){
+                    window.setTimeout(function(){
+                        //const script=ifh.contentDocument.createElement('script');
+                        //script.innerHTML="document.getElementsByClassName('bpx-player-ctrl-web')[0].click();";
+                        //ifh.body.appendChild(script);
+                        //var doc=ifh.contentDocument
+                        //doc.getElementsByClassName('bpx-player-ctrl-web')[0].click();
+                    },100);
+                    console.log("iframe is loaded.");
+                    ifh.removeEventListener("load",ifload,true);
+                }
+                ifh.addEventListener("load",ifload,true);
+            }
         </script>
     </head>
     <body class="mdui-loaded">
@@ -265,32 +285,17 @@
                 </div>
                 <a href="javascript:svhtml()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme-accent">打开</a>
             </div>
+            <br><br><div class="mdui-container mdui-shadow-3" style="padding:15px">
+                <h4 class="article-title">[实验]利用直接播放视频</h4>
+                <div class="mdui-textfield  mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">B站视频链接</label>
+                    <input class="mdui-textfield-input" type="text" id="bli" required/>
+                    <div class="mdui-textfield-helper">可以阻止重定向,但是全屏需要自己操作.</div>
+                </div>
+                <a href="javascript:svexp()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme-accent">打开</a>
+            </div>
             <br><br><br>
             <div class="mdui-container mdui-shadow-3" style="padding:15px"><div class="mdui-video-container" id="ifhost"><div class="mdui-typo"><h1 class="title mdui-text-color-theme">iframe未加载</h1></div></div></div>
-            <!--<div class="mdui-textfield  mdui-textfield-floating-label">
-                <label class="mdui-textfield-label">AID(AV号)</label>
-                <input class="mdui-textfield-input" type="text" pattern="^[1-9]{1}[0-9]{0,}$" id="aid" required/>
-                <div class="mdui-textfield-error">只能是数字!!!</div>
-                <div class="mdui-textfield-helper">只能是数字.</div>
-            </div>
-            <div class="mdui-textfield  mdui-textfield-floating-label">
-                <label class="mdui-textfield-label">BVID(BV号)</label>
-                <input class="mdui-textfield-input" type="text" pattern="^BV[0-9a-zA-Z]{1,}$" id="bvid" required/>
-                <div class="mdui-textfield-error">只能由0-9/a-z/A-Z组成且由BV开头!!!</div>
-                <div class="mdui-textfield-helper">只能由0-9/a-z/A-Z组成且由BV开头.</div>
-            </div>
-            <div class="mdui-textfield  mdui-textfield-floating-label">
-                <label class="mdui-textfield-label">CID</label>
-                <input class="mdui-textfield-input" type="text" pattern="^[1-9]{1}[0-9]{0,}$" id="cid" required/>
-                <div class="mdui-textfield-error">只能是数字!!!</div>
-                <div class="mdui-textfield-helper">只能是数字.</div>
-            </div>
-            <div class="mdui-textfield  mdui-textfield-floating-label">
-                <label class="mdui-textfield-label">页码</label>
-                <input class="mdui-textfield-input" type="text" pattern="^[1-9]{1}[0-9]{0,}$" id="aid" required/>
-                <div class="mdui-textfield-error">只能是数字!!!</div>
-                <div class="mdui-textfield-helper">只能是数字.</div>
-            </div>-->
         </div>
         <br><br>
         <br><br><br>
