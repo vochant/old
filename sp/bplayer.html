@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink mdui-appbar-with-toolbar">
+    <head>
+        <title>Vochantia</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <link rel="stylesheet" href="../web/css/mdui.min.css"/>
+        <script src="../web/js/mdui.min.js"></script>
+        <script src="../web/js/index.js"></script>
+        <link rel="icon" href="../web/img/viahead.png">
+        <script>
+            var aid,bvid,cid,pageid;
+            var aid1,bvid1,cid1,pageid1;
+            var errors="",failed="false";
+            var npa=/^[1-9]{1}[0-9]{0,}$/,bpa=/^BV[0-9a-zA-Z]{1,}$/
+
+            function svproc()
+            {
+                document.getElementById('ifhost').innerHTML='<iframe src="https://player.bilibili.com/player.html?aid='+aid+'&bvid='+bvid+'&cid='+cid+'&page='+pageid+'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>';
+            }
+
+            function svtemplate()
+            {
+                var x=document.getElementById('vid').value;
+                if(x=="1")
+                {
+                    aid="388583823";
+                    bvid="BV1hd4y1q7A5";
+                    cid="849008461";
+                    pageid="1";
+                }
+                if(x=="2")
+                {
+                    aid="601888108";
+                    bvid="BV1vB4y1574y";
+                    cid="802251467";
+                    pageid="1";
+                }
+                if(x=="3")
+                {
+                    aid="734193174";
+                    bvid="BV1cD4y1E7LA";
+                    cid="935866887";
+                    pageid="1";
+                }
+                if(x=="4")
+                {
+                    aid="221052144";
+                    bvid="BV118411G7c7";
+                    cid="917170351";
+                    pageid="1";
+                }
+                if(x=="5")
+                {
+                    aid="733261727";
+                    bvid="BV13D4y1Y72p";
+                    cid="910569915";
+                    pageid="1";
+                }
+                if(x=="6")
+                {
+                    aid="690733936";
+                    bvid="BV1s24y1y7ck";
+                    cid="905899842";
+                    pageid="1";
+                }
+                if(x=="7")
+                {
+                    aid="427993948";
+                    bvid="BV1sG411x7B8";
+                    cid="758792733";
+                    pageid="1";
+                }
+                if(x=="8")
+                {
+                    aid="639780293";
+                    bvid="BV1rY4y1x7q5";
+                    cid="740544655";
+                    pageid="1";
+                }
+                if(x=="9")
+                {
+                    aid="51901949";
+                    bvid="BV1i4411v7Yg";
+                    cid="90864519";
+                    pageid="1";
+                }
+                if(x=="10")
+                {
+                    aid="23953618";
+                    bvid="BV16p411R76L";
+                    cid="40087389";
+                    pageid="1";
+                }
+                svproc();
+            }
+
+            function svcustom()
+            {
+                aid1=document.getElementById('aid').value;
+                bvid1=document.getElementById('bvid').value;
+                cid1=document.getElementById('cid').value;
+                pageid1=document.getElementById('cid').value;
+                errors="";
+                failed="false";
+                if(!npa.test(aid1))
+                {
+                    errors+="AID(AV号)<br>";
+                    failed="true";
+                }
+                if(!bpa.test(bvid1))
+                {
+                    errors+="BVID(BV号)<br>";
+                    failed="true";
+                }
+                if(!npa.test(cid1))
+                {
+                    errors+="CID<br>";
+                    failed="true";
+                }
+                if(!npa.test(pageid1))
+                {
+                    errors+="页码<br>";
+                    failed="true";
+                }
+                if(failed=="true")
+                {
+                    mdui.alert("以下数据不合法:<br>"+errors,"错误");
+                    return;
+                }
+                aid=aid1;
+                bvid=bvid1;
+                cid=cid1;
+                pageid=pageid1;
+                svproc();
+            }
+
+            function svch()
+            {
+                mdui.alert("通常,你可以直接在B站上搜索BVID(BV号)或者AV+AID(AV号)来查找一个视频,网页端的网址也是包含BVID(BV号)的.页码即多页视频(不是视频合集)中视频的编号,一般的单页视频页码为1.<br><br>在电脑端访问一个B站的视频,在分享中复制内嵌代码,在任意位置粘贴,在src属性中找到对应数据即可.","帮助");
+            }
+
+            function svhtml()
+            {
+                document.getElementById('ifhost').innerHTML=document.getElementById('ht').value;
+            }
+        </script>
+    </head>
+    <body class="mdui-loaded">
+        <header class="mdui-appbar mdui-appbar-fixed">
+            <div class="mdui-toolbar mdui-color-theme">
+                <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="./">
+                    <i class="mdui-icon material-icons">arrow_back</i>
+                </a>
+                <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target:'#main-drawer',swipe:true}">
+                    <i class="mdui-icon material-icons">menu</i>
+                </span>
+                <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="../">
+                    <i class="mdui-icon material-icons">home</i>
+                </a>
+                <a class="mdui-typo-title">bplayer - SP - Vochantia</a>
+            </div>
+        </header>
+        <div class="mc-drawer mdui-drawer mdui-shadow-6 mdui-drawer-close" id="main-drawer">
+            
+            <div class="mdui-list">
+                <div class="mdui-subheader">主站</div>
+                <a class="mdui-list-item mdui-ripple" href="../">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../ros">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">storage</i>
+                    <div class="mdui-list-item-content">存储</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../links/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+                    <div class="mdui-list-item-content">链接</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../game/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">videogame_asset</i>
+                    <div class="mdui-list-item-content">游戏</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../blog/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">book</i>
+                    <div class="mdui-list-item-content">博客</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../gitalk/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">message</i>
+                    <div class="mdui-list-item-content">讨论</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../oi/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">code</i>
+                    <div class="mdui-list-item-content">信奥</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../tools/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">apps</i>
+                    <div class="mdui-list-item-content">工具</div>
+                </a>
+                <div class="mdui-subheader">附加</div>
+                <a class="mdui-list-item mdui-ripple" href="../helper">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                    <div class="mdui-list-item-content">本站帮助</div>
+                </a>
+                <div class="mdui-divider"></div>
+            </div>
+        </div>
+        <div class="mdui-container">
+            <div class="mdui-typo">
+                <h1 class="title mdui-text-color-theme">哔哩哔哩播放器<br><small>随便看一下作者收藏</small></h1>
+            </div>
+            <div class="mdui-container mdui-shadow-3" style="padding:15px">
+                <h4 class="article-title">预设</h4>
+                <select id="vid" class="mdui-select" mdui-select="{position:'bottom'}">
+                    <option value="1">金色大厅鸡你太美</option>
+                    <option value="2">金色大厅诈骗</option>
+                    <option value="3">[MC]全村都阳了</option>
+                    <option value="4">去马赛克</option>
+                    <option value="5">[MC]免费地下城</option>
+                    <option value="6">[MC]Windows7基岩版</option>
+                    <option value="7">微软免费临时云电脑</option>
+                    <option value="8">带衣服的真人电摇</option>
+                    <option value="9">[MC]苏联国歌1944</option>
+                    <option value="10">苏联国家形象宣传片</option>
+                </select>
+                &nbsp;
+                <a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" href="javascript:svtemplate()">设置</a>
+            </div><br><br>
+            <div class="mdui-container mdui-shadow-3" style="padding:15px">
+                <h4 class="article-title">自定义播放器</h4>
+                <div class="mdui-textfield  mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">AID(AV号)</label>
+                    <input class="mdui-textfield-input" type="text" pattern="^[1-9]{1}[0-9]{0,}$" id="aid" required/>
+                    <div class="mdui-textfield-error">只能是数字!!!</div>
+                    <div class="mdui-textfield-helper">只能是数字.</div>
+                </div>
+                <div class="mdui-textfield  mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">BVID(BV号)</label>
+                    <input class="mdui-textfield-input" type="text" pattern="^BV[0-9a-zA-Z]{1,}$" id="bvid" required/>
+                    <div class="mdui-textfield-error">只能由0-9/a-z/A-Z组成且由BV开头!!!</div>
+                    <div class="mdui-textfield-helper">只能由0-9/a-z/A-Z组成且由BV开头.</div>
+                </div>
+                <div class="mdui-textfield  mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">CID</label>
+                    <input class="mdui-textfield-input" type="text" pattern="^[1-9]{1}[0-9]{0,}$" id="cid" required/>
+                    <div class="mdui-textfield-error">只能是数字!!!</div>
+                    <div class="mdui-textfield-helper">只能是数字.</div>
+                </div>
+                <div class="mdui-textfield  mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">页码</label>
+                    <input class="mdui-textfield-input" type="text" pattern="^[1-9]{1}[0-9]{0,}$" id="page" required/>
+                    <div class="mdui-textfield-error">只能是数字!!!</div>
+                    <div class="mdui-textfield-helper">只能是数字.</div>
+                </div>
+                <a href="javascript:svcustom()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme-accent">打开</a>
+                <a href="javascript:svch()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme-accent">帮助</a>
+            </div>
+            <br><br><div class="mdui-container mdui-shadow-3" style="padding:15px">
+                <h4 class="article-title">直接插入iframe/其他HTML文本</h4>
+                <div class="mdui-textfield  mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">Hypertext</label>
+                    <input class="mdui-textfield-input" type="text" id="ht" required/>
+                    <div class="mdui-textfield-helper">可以粘贴B站的嵌入代码,但是请在src的//前添加https:</div>
+                </div>
+                <a href="javascript:svhtml()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme-accent">打开</a>
+            </div>
+            <br><br><br>
+            <div class="mdui-container mdui-shadow-3" style="padding:15px"><div class="mdui-video-container" id="ifhost"><div class="mdui-typo"><h1 class="title mdui-text-color-theme">iframe未加载</h1></div></div></div>
+            <!--<div class="mdui-textfield  mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">AID(AV号)</label>
+                <input class="mdui-textfield-input" type="text" pattern="^[1-9]{1}[0-9]{0,}$" id="aid" required/>
+                <div class="mdui-textfield-error">只能是数字!!!</div>
+                <div class="mdui-textfield-helper">只能是数字.</div>
+            </div>
+            <div class="mdui-textfield  mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">BVID(BV号)</label>
+                <input class="mdui-textfield-input" type="text" pattern="^BV[0-9a-zA-Z]{1,}$" id="bvid" required/>
+                <div class="mdui-textfield-error">只能由0-9/a-z/A-Z组成且由BV开头!!!</div>
+                <div class="mdui-textfield-helper">只能由0-9/a-z/A-Z组成且由BV开头.</div>
+            </div>
+            <div class="mdui-textfield  mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">CID</label>
+                <input class="mdui-textfield-input" type="text" pattern="^[1-9]{1}[0-9]{0,}$" id="cid" required/>
+                <div class="mdui-textfield-error">只能是数字!!!</div>
+                <div class="mdui-textfield-helper">只能是数字.</div>
+            </div>
+            <div class="mdui-textfield  mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">页码</label>
+                <input class="mdui-textfield-input" type="text" pattern="^[1-9]{1}[0-9]{0,}$" id="aid" required/>
+                <div class="mdui-textfield-error">只能是数字!!!</div>
+                <div class="mdui-textfield-helper">只能是数字.</div>
+            </div>-->
+        </div>
+        <br><br>
+        <br><br><br>
+    </body>
+</html>
