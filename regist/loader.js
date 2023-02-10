@@ -26,7 +26,7 @@ function Load(fn)
 
 function isLocalStorageSupported()
 {
-	if(Window.localStorage)
+	if(window.localStorage)
 	{
 		return true;
 	}
