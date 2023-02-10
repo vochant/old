@@ -1,0 +1,7 @@
+<div class="mdui-typo">
+    <h1 class="title mdui-text-color-theme mdui-typo">激活Vochantia<br><small>作为开源网站,不接受的可以Fork</small></h1>
+    <br><br><br>
+    由于该网站属于静态、单人开发、个人所有网站,没有任何设置内购的可能性。为了保证开发过程的顺利,同时提供一些作者日用,本网站于2023年2月7日起决定启用激活特性。本特性保证不会强制收费,但是如果希望规避收费请使用《用户协议》允许的手段,并且保证您的有效激活符合《用户协议》的规定。<br><br>如果希望使用此网站,并且接受激活,请单击以下按钮以继续完成激活流程。
+</div>
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme-accent" href="javascript:Load('activity.license')"></a>
+<br><br><br>
