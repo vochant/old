@@ -92,5 +92,5 @@
         <li>任何人的基本信息收集需求都是一样的,额外的需求来源于用户的操作,即如“绑定第三方账号时提供对应平台的账号”等合理且必须的。</li>
     </ol>
 </div>
-<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme-accent" href="javascript:Load('activity.select')">我同意并继续</a>
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme-accent" href="javascript:LoadEx('activity.select')">我同意并继续</a>
 <br><br><br>
