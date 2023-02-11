@@ -23,11 +23,16 @@ function forOnlyPage()
 	}
 }
 
+function ltepEx(file_contents)
+{
+	document.getElementById("elementspath").innerHTML=file_contents;
+	forOnlyPage();
+}
+
 function LoadEx(fn)
 {
 	curact=fn;
-	floader(fn+".els",ltep);
-	forOnlyPage();
+	floader(fn+".els",ltepEx);
 }
 
 function Init()
