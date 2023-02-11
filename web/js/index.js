@@ -257,6 +257,7 @@ function checkDir(fmatc)
     {
         return;
     }
+    window.localStorage["_backaddr"]=window.location.href;
     window.location.href=fmatc;
 }
 
