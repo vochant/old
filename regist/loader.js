@@ -188,3 +188,8 @@ function DebugJS()
 {
 	eval(document.getElementById("js").value);
 }
+
+function NoActive()
+{
+	window.localStorage.removeItem("_active_type");
+}
