@@ -23,6 +23,13 @@ function forOnlyPage()
 	}
 }
 
+function LoadEx(fn)
+{
+	curact=fn;
+	floader(fn+".els",ltep);
+	forOnlyPage();
+}
+
 function Init()
 {
 	if(checkLS())
