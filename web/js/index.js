@@ -218,11 +218,35 @@ function DoubleMD5()
 
 function CheckDRCode()
 {
+	if(!window.localStorage.MACCodeGenerated)
+	{
+		for(i=0;i<4;i++)
+		{
+			window.localStorage["_mcode_"+i]=Random(lli[i])+"";
+		}
+		window.localStorage.MACCodeGenerated="true";
+	}
+	for(i=0;i<4;i++)
+	{
+		mcode[i]=Number(window.localStorage["_mcode_"+i]);
+	}
     return DoubleMD5()==window.localStorage[ofns[4]];
 }
 
 function CheckUserCode()
 {
+	if(!window.localStorage.MACCodeGenerated)
+	{
+		for(i=0;i<4;i++)
+		{
+			window.localStorage["_mcode_"+i]=Random(lli[i])+"";
+		}
+		window.localStorage.MACCodeGenerated="true";
+	}
+	for(i=0;i<4;i++)
+	{
+		mcode[i]=Number(window.localStorage["_mcode_"+i]);
+	}
     return window.localStorage["_codern"]==enCoder(window.localStorage["_registname"]);
 }
 
