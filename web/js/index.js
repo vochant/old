@@ -275,4 +275,4 @@ function uniInit()
     floader("index.dmi",checkDir);
 }
 
-uniInit();
+window.onload=uniInit;
