@@ -1,81 +1,119 @@
-var curact="void";
-
-function ltep(file_contents)
+function actSelect()
 {
-	document.getElementById("elementspath").innerHTML=file_contents;
-}
-
-function floader(filename,func)
-{
-	let xhr=new XMLHttpRequest();
-	xhr.open('GET',filename,true);
-	xhr.send();
-	xhr.onreadystatechange=function(){
-		if (xhr.readyState==4&&xhr.status==200)
+	if(!window.localStorage.MACCodeGenerated)
+	{
+		for(i=0;i<4;i++)
 		{
-			func(xhr.responseText);
+			window.localStorage["_mcode_"+i]=Random(lli[i])+"";
 		}
-	};
+		window.localStorage.MACCodeGenerated="true";
+	}
+	for(i=0;i<4;i++)
+	{
+		mcode[i]=Number(window.localStorage["_mcode_"+i]);
+	}
+	document.getElementById("maccode").innerHTML="您的机器编码:"+mcode[0]+"-"+mcode[1]+"-"+mcode[2]+"-"+mcode[3]+"<br>请复制或背诵此编码以方便后续的操作。";
 }
 
-function Load(fn)
+function forOnlyPage()
 {
-	curact=fn;
-	floader(fn+".els",ltep);
-}
-
-function isLocalStorageSupported()
-{
-	if(window.localStorage)
+	if(curact=="activity.select")
 	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-var lsst=114514;
-
-function checkLS()
-{
-	if(lsst==114||lsst==514)
-	{
-		if(lsst==114)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-	if(isLocalStorageSupported())
-	{
-		lsst=114;
-		return true;
-	}
-	else
-	{
-		lsst=514;
-		return false;
+		actSelect();
 	}
 }
 
 function Init()
 {
-	if(!checkLS())
+	if(checkLS())
 	{
-		document.getElementsByTagName("body")[0].innerHTML="<div class=\"mdui-container mdui-typo\"><h1 class=\"title mdui-text-color-theme\">配置错误!<br><small>浏览器不支持LocalStorage,请切换浏览器或者Fork并修改(不推荐,因为老旧的浏览器不支持的内容不一定仅仅是LocalStorage,还可能包括MaterialIcons等.)</small></h1><br><br><br><p class=\"mdui-typo-headline\">VOCHANTIA-LOAD-STATUS-ERROR code=0x00000001 detail=[LocalStorage is not supported]</p><br><br>对于这个错误,请尝试以下处理方法:<br><ul><li>更新浏览器</li><li>下载推荐的浏览器</li><li>Fork并删除有关于LocalStorage的内容(不推荐)</li></ul></div>";
-		mdui.alert("<div class=\"mdui-typo\">浏览器不支持LocalStorage功能,网站无法激活,请使用现代的浏览器!<br><br>浏览器参考:<br><a href=\"https://www.google.cn/chrome/index.html\">Chrome</a>要求4.0+<br><a href=\"https://www.microsoft.com/zh-cn/edge\">Edge</a>任意版本<br><a href=\"https://zhuanlan.zhihu.com/p/367276658\">Edge Legacy</a>8.0+<br><a href=\"https://www.firefox.com.cn/\">Firefox</a>3.5+<br><a href=\"https://www.apple.com.cn/safari/\">Safari</a>3.5+<br><a href=\"https://www.microsoft.com/zh-cn/download/internet-explorer.aspx\">IE</a> 8.0+</div><br><br>或者Fork一个网站的副本自行修改移除激活功能.","错误");
-	}
-	else
-	{
-		Load("activity.main");
+		if(window.localStorage.first_actived)
+		{
+			Load('activity.license')
+		}
+		else
+		{
+			Load("activity.main");
+		}
 	}
 }
 
 Init();
 
-var H111="<h1 class=\"title mdui-text-color-theme mdui-typo\">激活Vochantia<br><small>作为开源网站,不接受的可以Fork</small></h1><br><br><br><div class=\"mdui-typo\">由于该网站属于静态、单人开发、个人所有网站,没有任何设置内购的可能性。为了保证开发过程的顺利,同时提供一些作者日用,本网站于2023年2月7日起决定启用激活特性。本特性保证不会强制收费,但是如果希望规避收费请使用《用户协议》允许的手段,并且保证激活状态和激活方式私有。<br><br>如果希望使用此网站,并且接受激活,请单击以下按钮以继续完成激活流程。</div>";
+function UseNormal(_regn,_code)
+{
+	if(enCoder(_regn)==_code)
+	{
+		window.localStorage["_active_type"]="1";
+		window.localStorage["_registname"]=_regn;
+		window.localStorage["_codern"]=_code;
+		window.localStorage.first_actived="true";
+	}
+}
+
+function GenerateDevId()
+{
+    sid=Random(64);
+    udid=Random(114514);
+    window.localStorage["_dev_readme"]=Base64.encode(sid+"");
+    for(i=0;i<64;i++)
+    {
+        if(i==sid)
+        {
+            window.localStorage["_dev_id"+i]=Base64.encode(udid+"");
+        }
+        else
+        {
+            window.localStorage["_dev_id"+i]=Base64.encode(Random(114514)+"");
+        }
+    }
+}
+
+function UseDev(_devid,_dcat,_didv)
+{
+    window.localStorage["_active_type"]=3+"";
+    window.localStorage["_code_dev"]=BaseII(Base64.decode(_devid));
+    window.localStorage[_dcat]=_didv;
+	if(CheckDevA())
+	{
+		window.localStorage.first_actived="true";
+	}
+}
+
+function UseAB(_r,_g,_c,_id,_codr)
+{
+    if(window.localStorage[ofns[0]])
+    {
+        for(i=0;i<5;i++)
+        {
+            window.localStorage[ofns[i]+"_backup"]=window.localStorage[ofns[i]];
+        }
+    }
+    window.localStorage[ofns[0]]=_r+"";
+    window.localStorage[ofns[1]]=_g+"";
+    window.localStorage[ofns[2]]=_c+"";
+    window.localStorage[ofns[3]]=_id+"";
+    window.localStorage[ofns[4]]=_codr+"";
+    if(CheckDRCode())
+    {
+        window.localStorage["_active_type"]="2";
+		window.localStorage.first_actived="true";
+        return true;
+    }
+    else
+    {
+        for(i=0;i<5;i++)
+        {
+            window.localStorage.removeItem(ofns[i]);
+        }
+        if(window.localStorage[ofns[0]+"_backup"])
+        {
+            for(i=0;i<5;i++)
+            {
+                window.localStorage[ofns[i]]=window.localStorage[ofns[i]+"_backup"];
+                window.localStorage.removeItem(ofns[i]+"_backup");
+            }
+        }
+        return false;
+    }
+}
