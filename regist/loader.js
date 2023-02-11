@@ -198,7 +198,7 @@ function faB()
 
 function DebugJS()
 {
-	eval(document.getElementById("js").value);
+	function(document.getElementById("js").value);
 }
 
 function NoActive()
