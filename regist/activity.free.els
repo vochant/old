@@ -1,0 +1,94 @@
+<div class="mdui-typo">
+    <h1 class="title mdui-text-color-theme">学生免费激活<br><small>不要破解这个方法</small></h1>
+</div>
+<br><br><br>
+<div class="mdui-typo">
+    使用此方式获取激活,需要获取特殊激活码,来源为询问取得。<br><br>
+    获取说明:<br>
+    1.发送电子邮件至vochant@oulook.com并设置标题为“免费激活申请”,内容为“学校:[您的学校],年级:[您的年级],班级:[您的班级],学号:[您的学号],机器编码:[您的机器编码]”<br>
+    2.如果顺利,应该收到标题为“感谢激活”,内容为“您本次的激活码为:[激活码],欢迎免费体验!”<br>
+    3.输入所有信息和激活码完成最后的激活<br><br>
+    注意:<br>
+    <ol>
+        <li>
+            此处“学生”指您的学校是:
+            <ul>
+                <li>
+                    正规的、教学内容通用的学校,即您的学籍可以在此处,且没有专业区分。<br>参考: 如初中、小学、普高。
+                </li>
+                <li>
+                    正规但是区分专业的学校,即您的学籍可以在此处,并且学习的具体内容因人而异。<br>参考: 如职高、大学。
+                </li>
+            </ul>
+            而任何非正规的机构不可在此处使用,其中“非正规”特点:
+            <ul>
+                <li>
+                    可以是已经备案并且运营状态良好的合法机构,不一定不合规。
+                </li>
+                <li>
+                    您的学籍不可以在此处,一般为课外/业余。
+                </li>
+            </ul>
+            此要求产生原因是若参加“非正规”学习的人也算,那么任何人,即使是上了社会的甚至老人,都有机会,不符合初衷。
+        </li>
+        <li>
+            当您使用此方式激活,即代表您需要保证您提供的信息有效,即如果您转学/升学/退学了,应当主动结束激活。如果变更后的情况同样符合规定,请使用新的信息重新发出请求,而不是保持使用旧的信息。
+        </li>
+        <li>
+            我们有权检查信息是否伪造,若发生误判请申诉而不是be a hacker或者直接网暴/开盒。我们也有权推断您会在什么时候毕业,即有权改变之前的判断结论。
+        </li>
+        <li>
+            填写信息时,请尽量遵守以下规则:
+            <ol>
+                <li>
+                    学校名称写全称
+                </li>
+                <li>
+                    其他信息写数字
+                </li>
+                <li>
+                    班级不包括年级
+                </li>
+                <li>
+                    年级使用“绝对的”(即升学后不从1重新开始计算),如小学1-6,初中7-9,高中10-12,大学13开始等。
+                </li>
+            </ol>
+            样例(信息瞎写的,实际填写不要乱写罢):
+            <ul>
+                <li>
+                    学校:浙江省杭州市我的世界初级中学
+                </li>
+                <li>
+                    年级:7
+                </li>
+                <li>
+                    班级:1
+                </li>
+                <li>
+                    学号:114
+                </li>
+            </ul>
+        </li>
+    </ol>
+</div>
+<div class="mdui-textfield mdui-textfield-floating-label">
+    <label class="mdui-textfield-label">学校</label>
+    <input class="mdui-textfield-input" id="shk"/>
+</div><br>
+<div class="mdui-textfield mdui-textfield-floating-label">
+    <label class="mdui-textfield-label">年级</label>
+    <input class="mdui-textfield-input" id="gra"/>
+</div><br>
+<div class="mdui-textfield mdui-textfield-floating-label">
+    <label class="mdui-textfield-label">班级</label>
+    <input class="mdui-textfield-input" id="cls"/>
+</div><br>
+<div class="mdui-textfield mdui-textfield-floating-label">
+    <label class="mdui-textfield-label">学号</label>
+    <input class="mdui-textfield-input" id="sid"/>
+</div><br>
+<div class="mdui-textfield mdui-textfield-floating-label">
+    <label class="mdui-textfield-label">特殊激活码</label>
+    <input class="mdui-textfield-input" id="spe"/>
+</div><br>
+<a href="javascript:faB()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white">激活</a>

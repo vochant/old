@@ -1,0 +1,16 @@
+<div class="mdui-typo">
+    <h1 class="title mdui-text-color-theme">开发者激活<br><small>专门考验开发者工具使用经验的激活方式</small></h1>
+</div>
+<br><br><br>
+<div class="mdui-typo">
+    使用此方式获取激活,需要使用开发者控制台<br>手机可以使用下面的运行工具,输出的Id是output<br>
+</div>
+<div class="mdui-textfield mdui-textfield-floating-label">
+    <label class="mdui-textfield-label">JavaScript</label>
+    <input class="mdui-textfield-input" id="js"/>
+</div><br>
+<a href="javascript:DebugJS()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white">运行</a>
+<div class="mdui-typo">
+    <h4 class="article-title">展示区,设置document.getElementById("output").innerHTML以显示</h4><br>
+    <code id="output"></code>
+</div>

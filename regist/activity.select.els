@@ -1,0 +1,16 @@
+<div class="mdui-typo">
+    <h1 class="title mdui-text-color-theme">选择激活方式<br><small id="maccode"></small></h1>
+</div>
+<br><br><br>
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white" href="javascript:Load('activity.normal')">普通激活</a>&nbsp;
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white" href="javascript:Load('activity.free')">学生专用激活</a>&nbsp;
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white" href="javascript:Load('activity.develop')">开发者激活</a>
+<br><br>
+<div class="mdui-typo">
+    通常地,激活需要一个电子邮箱,如果您没有我们会提供几种不错的方案。<br>
+    在国内,如果有手机可以使用,首推<a href="https://mail.163.com">网易邮箱</a>,它只需要使用手机完成一次注册而无需每次登录都使用。<br>
+    其次,是<a href="https://login.live.com">Microsoft</a>,无需手机号,而且完成注册直接就是微软账户了。但是由于是境外的,访问速度较慢,绑定辅助邮箱可以用不同的浏览器分别注册并互相绑定。<br>
+    对于有QQ的用户,<a href="https://mail.qq.com">QQ邮箱</a>也许不错,因为你无需再次注册,但是不推荐,因为你时常需要扫码或发验证码或打开客户端。<br>
+    具体选择因人而异,你如果有其他的邮箱,也可以直接用,记住,这里是推荐,是给没有邮箱的人注册看的。<br><br><br>
+    <a href="javascript:CheckAct()">检测当前激活状态!差不多了就可以走了~</a>|<a href="javascript:NoActive()">清除激活状态,重新开始啦~</a>
+</div>

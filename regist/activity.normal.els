@@ -1,0 +1,21 @@
+<div class="mdui-typo">
+    <h1 class="title mdui-text-color-theme">激活码激活<br><small>开发者亦可使用自己破解得到的激活码</small></h1>
+</div>
+<br><br><br>
+<div class="mdui-typo">
+    使用此方式获取激活,需要获取激活码,来源包括购买、活动和破解。虽然允许破解,但是开发者推荐使用适合开发者的方法3。<br><br>
+    购买说明:<br>
+    1.前往<a href="https://afdian.net">爱发电</a>赞助并私信作者“addemail [您的邮箱地址]”。<br>
+    2.发送电子邮件至vochant@oulook.com并设置标题为“获取激活码”,内容为“用户:[您的爱发电用户名],编码:[您的机器编码],注册名:[您欲注册的用户名]”,并添加截图插入或作为附件。<br>
+    3.如果顺利,应该收到标题为“感谢激活”,内容为“您本次的激活码为:[激活码],剩余[剩余次数]次获取激活码的机会。”<br>
+    4.输入用户名和激活码完成最后的激活
+</div>
+<div class="mdui-textfield mdui-textfield-floating-label">
+    <label class="mdui-textfield-label">欲注册的用户</label>
+    <input class="mdui-textfield-input" id="un"/>
+</div><br>
+<div class="mdui-textfield mdui-textfield-floating-label">
+    <label class="mdui-textfield-label">激活码</label>
+    <input class="mdui-textfield-input" id="cod"/>
+</div><br>
+<a href="javascript:faA()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white">激活</a>
