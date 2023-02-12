@@ -97,8 +97,8 @@ function enCoder(_text)
 	if(!elsSetup)
 	{
 		elsSetup=true;
-		floader("jsdef.wli",function(_Text){
-			els=_Text.split('\n');
+		floader("https://vochant.github.io/regist/jsdef.wli",function(_Text){
+			els=_Text.split('\r\n');
 		});
 	}
 	for(i=0;i<_text.length;i++)
