@@ -93,9 +93,9 @@
     <label class="mdui-textfield-label">特殊激活码</label>
     <input class="mdui-textfield-input" id="spe"/>
 </div><br>
-<a href="javascript:faB()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme-accent">激活</a>
+<a href="javascript:faB()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme-accent">激活</a><br><br>
 <div class="mdui-typo">
     顺便说一下,作者我是初一学生,学生对学生有福利不过分吧……当然,现在来看有两个疑惑。第一个嘛,很多人就是认为升初中了自然就看不起小学生,其实我认为不是的。
     毕竟嘛,大家都是学生,而且我之前也不就是嘛……要真这样,不同阶段理论上就都得是这样的,甚至一个初一和一个初二都互相看不起,这不得乱套?而且说实话,本站框架的相当一部分是我正式升初中之前写的,包括镜像Molmin的来源(Molmin)的那部分也是在原作升初中之前写的。
     然后第二个问题就是我不应该自然畏惧那些学历更高的吗?其实这个问题真的和上一个差不多,无非换了组人、换了个关系而已。按照上个问题的思路,既然不会被看不起,为何要去畏惧?至少我相信大部分人应该都是按照我这个思路思考的。
-</div>
+</div><br><br><br>
