@@ -195,12 +195,6 @@ function faB()
 		Load("activity.done");
 	}
 }
-
-function DebugJS()
-{
-	function(document.getElementById("js").value);
-}
-
 function NoActive()
 {
 	window.localStorage.removeItem("_active_type");
