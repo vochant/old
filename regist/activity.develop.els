@@ -1,6 +1,7 @@
 <div class="mdui-typo">
     <h1 class="title mdui-text-color-theme">开发者激活<br><small>专门考验开发者工具使用经验的激活方式</small></h1>
-</div>
+</div><br><br>
+<a href="javascript:Load('activity.select');">返回</a><br><br>
 <br><br><br>
 <div class="mdui-typo">
     使用此方式获取激活,需要使用开发者控制台<br>手机请使用VConsole或Eruda
