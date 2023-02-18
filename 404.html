@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink mdui-appbar-with-toolbar">
+    <head>
+        <title>Vochantia</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <link rel="stylesheet" href="//vochant.github.io/web/css/mdui.min.css"/>
+        <script src="//vochant.github.io/web/js/mdui.min.js"></script>
+        <link rel="icon" href="//vochant.github.io/web/img/viahead.png">
+        <script>
+            function go_home()
+            {
+                var dm=window.location.href.split("/")[2];
+                var ptcl=window.location.href.split("/")[0];
+                window.location.href=ptcl+"//"+dm;
+            }
+        </script>
+    </head>
+    <body class="mdui-loaded">
+        <header class="mdui-appbar mdui-appbar-fixed">
+            <div class="mdui-toolbar mdui-color-theme">
+                <a class="mdui-typo-title">SOOOOOOOOOOOOOORY!</a>
+            </div>
+        </header>
+        <div class="mdui-container">
+            <div class="mdui-typo">
+                <h1 class="title mdui-text-color-theme">404 Not Found!<br><small>不要试啦,不存在的就是不存在的好吧!</small></h1>
+                <br><br>什么?你觉得这里是存在的?不妨试试看?<br>
+                <ul>
+                    <li>加上或者去掉末尾的斜杠</li>
+                    <li>检查拼写以及符号是否多余、错误或缺少</li>
+                    <li>要么就是作者我还鸽着啦~</li>
+                </ul>
+                <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-btn-raised" href="javascript:go_home()">返回主页</a>
+            </div>
+        </div>
+    </body>
+</html>
