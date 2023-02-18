@@ -3,6 +3,7 @@
 </div>
 <br><br><br>
 <div class="mdui-typo">
+    <a href="LoadEx('activity.select');">返回</a><br><br>
     使用此方式获取激活,需要获取激活码,来源包括购买、活动和破解。虽然允许破解,但是开发者推荐使用适合开发者的方法3。<br><br>
     购买说明:<br>
     1.前往<a href="https://afdian.net">爱发电</a>赞助并私信作者“addemail [您的邮箱地址]”。<br>
@@ -20,3 +21,4 @@
     <input class="mdui-textfield-input" id="cod"/>
 </div><br>
 <a href="javascript:faA()" class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white">激活</a>
+<br><br><a href="javascript:Load('activity.extras')">彩蛋:活动列表</a><br><br>
