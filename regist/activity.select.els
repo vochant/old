@@ -4,7 +4,8 @@
 <br><br><br>
 <a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme" href="javascript:Load('activity.normal')">普通激活</a>&nbsp;
 <a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme" href="javascript:Load('activity.free')">学生专用激活</a>&nbsp;
-<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme" href="javascript:Load('activity.develop')">开发者激活</a>
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme" href="javascript:Load('activity.develop')">开发者激活</a>&nbsp;
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-theme" href="javascript:Load('activity.trial')">免费试用</a>
 <br><br>
 <div class="mdui-typo">
     通常地,激活需要一个电子邮箱,如果您没有我们会提供几种不错的方案。<br>
