@@ -1,0 +1,8 @@
+<div class="mdui-typo">
+    <h1 class="title mdui-text-color-theme">活动<br><small>免费激活</small></h1>
+    <br><br>
+    <a href="javascript:Load('activity.normal');">返回</a><br><br>
+    [1]爱发电未部署完成|<a href="javascript:Load('activity.nonafdian');">点我跳转</a>
+    <br>由于个人爱发电未完成部署,即项目未创建,现在选择普通激活者可以使用此途径临时激活。
+</div>
+<br><br>

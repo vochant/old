@@ -1,0 +1,8 @@
+<div class="mdui-typo">
+    <h1 class="title mdui-text-color-theme">活动详细<br><small>爱发电未部署完成</small></h1>
+    <br><br>
+    <a href="javascript:Load('activity.extras');">返回</a><br><br>
+    有效期:爱发电部署完成前<br>
+    <a href="javascript:window.localStorage['_active_type']='5';window.localStorage['_extra_id']='0';">激活</a>
+</div>
+<br><br>
