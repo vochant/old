@@ -357,6 +357,15 @@ function CheckTrial()
 	return true;
 }
 
+function CheckExtra()
+{
+	if(window.localStorage["_extra_id"]=="0")
+	{
+		return true;
+	}
+	return false;
+}
+
 function GetActive()
 {
     if(checkLS())
@@ -378,10 +387,14 @@ function GetActive()
         {
             return CheckDevA();
         }
-		if(Actype=="4")
-		{
-			return CheckTrial();
-		}
+	if(Actype=="4")
+	{
+		return CheckTrial();
+	}
+	if(Actype=="5")
+	{
+		return CheckExtra();
+	}
         return false;
     }
     return true;
