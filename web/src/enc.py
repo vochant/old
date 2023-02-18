@@ -1,26 +1,10 @@
-from PIL import Image
-import math
-
-def encode(text):
-  str_len= len(text)
-  width=math.ceil(str_len**0.5)
-  im=Image. new("RGB",(width, width), 0x0)
-  
-  x,y=0,0
-  for i in text:
-    index= ord(i)
-    rgb=(0, (index & 0xFF00)>> 8, index & 0xFF)
-    im.putpixel((x, y),rgb)
-    if x== width - 1:
-       x=0
-       y +=1
-    else:
-       x+=1
-  return im
-
-if __name__=='__main__':
-  with open("aaa.txt",encoding="utf-8") as f:
-    all_text=f.read()
-    
-    im= encode (all_text)
-    im.save("out.bmp")
+ZnJvbSBQSUwgaW1wb3J0IEltYWdlDQppbXBvcnQgbWF0aA0KDQpkZWYgZW5jb2RlKHRleHQpOg0K
+ICBzdHJfbGVuPSBsZW4odGV4dCkNCiAgd2lkdGg9bWF0aC5jZWlsKHN0cl9sZW4qKjAuNSkNCiAg
+aW09SW1hZ2UuIG5ldygiUkdCIiwod2lkdGgsIHdpZHRoKSwgMHgwKQ0KICANCiAgeCx5PTAsMA0K
+ICBmb3IgaSBpbiB0ZXh0Og0KICAgIGluZGV4PSBvcmQoaSkNCiAgICByZ2I9KDAsIChpbmRleCAm
+IDB4RkYwMCk+PiA4LCBpbmRleCAmIDB4RkYpDQogICAgaW0ucHV0cGl4ZWwoKHgsIHkpLHJnYikN
+CiAgICBpZiB4PT0gd2lkdGggLSAxOg0KICAgICAgIHg9MA0KICAgICAgIHkgKz0xDQogICAgZWxz
+ZToNCiAgICAgICB4Kz0xDQogIHJldHVybiBpbQ0KDQppZiBfX25hbWVfXz09J19fbWFpbl9fJzoN
+CiAgd2l0aCBvcGVuKCJhYWEudHh0IixlbmNvZGluZz0idXRmLTgiKSBhcyBmOg0KICAgIGFsbF90
+ZXh0PWYucmVhZCgpDQogICAgDQogICAgaW09IGVuY29kZSAoYWxsX3RleHQpDQogICAgaW0uc2F2
+ZSgib3V0LmJtcCIpDQo=
