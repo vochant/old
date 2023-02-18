@@ -36,7 +36,7 @@ function unbase(bstr,re)
 {
     for(i=0;i<re;i++)
     {
-        bstr=base64.decode(bstr);
+        bstr=Base64.decode(bstr);
     }
     return bstr;
 }
