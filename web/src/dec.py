@@ -1,19 +1,10 @@
-from PIL import Image
-
-def decode(im):
-    width,height = im.size
-    lst = []
-    for y in range(height):
-        for x in range(width):
-            red,green,blue = im.getpixel((x,y))
-            if(blue | green | red) == 0:
-                break
-            index = (green<<8) + blue
-            lst.append(chr(index))
-    return ''.join(lst)
-
-if __name__=='__main__':
-
-    all_text = decode(Image.open("out.bmp","r"))
-    with open ("decode.txt","w",encoding = "utf-8") as f:
-        f.write(all_text)
+ZnJvbSBQSUwgaW1wb3J0IEltYWdlDQoNCmRlZiBkZWNvZGUoaW0pOg0KICAgIHdpZHRoLGhlaWdo
+dCA9IGltLnNpemUNCiAgICBsc3QgPSBbXQ0KICAgIGZvciB5IGluIHJhbmdlKGhlaWdodCk6DQog
+ICAgICAgIGZvciB4IGluIHJhbmdlKHdpZHRoKToNCiAgICAgICAgICAgIHJlZCxncmVlbixibHVl
+ID0gaW0uZ2V0cGl4ZWwoKHgseSkpDQogICAgICAgICAgICBpZihibHVlIHwgZ3JlZW4gfCByZWQp
+ID09IDA6DQogICAgICAgICAgICAgICAgYnJlYWsNCiAgICAgICAgICAgIGluZGV4ID0gKGdyZWVu
+PDw4KSArIGJsdWUNCiAgICAgICAgICAgIGxzdC5hcHBlbmQoY2hyKGluZGV4KSkNCiAgICByZXR1
+cm4gJycuam9pbihsc3QpDQoNCmlmIF9fbmFtZV9fPT0nX19tYWluX18nOg0KDQogICAgYWxsX3Rl
+eHQgPSBkZWNvZGUoSW1hZ2Uub3Blbigib3V0LmJtcCIsInIiKSkNCiAgICB3aXRoIG9wZW4gKCJk
+ZWNvZGUudHh0IiwidyIsZW5jb2RpbmcgPSAidXRmLTgiKSBhcyBmOg0KICAgICAgICBmLndyaXRl
+KGFsbF90ZXh0KQ0K
