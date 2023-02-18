@@ -1,0 +1,9 @@
+<div class="mdui-typo">
+    <h1 class="title mdui-text-color-theme">免费试用<br><small>机房狂喜</small></h1>
+    <br><br>
+    <a href="javascript:Load('activity.select');">返回</a><br><br>
+    如果您正准备在个人电脑开启试用,请注意:试用将于下下个月首日到期,也就是说您会有至少28天至多61天的试用期。在机房无需担心,因为关机重置即代表LocalStorage清除。
+    您如果不讨厌烦人的水印,您可以反复清除LocalStorage,但是我们真的不希望您这样做,这样会很麻烦,而且其他免费的激活方式也有。
+    <br><br><a href="javascript:StartTrial()">开始试用</a><br><br>
+</div>
+<br><br>
