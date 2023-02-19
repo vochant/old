@@ -1,4 +1,4 @@
-var cacheName = 'version-6-0-1' // 决定是否更新本地资源，每次要更新记得替换
+var cacheName = 'version-6-0-2' // 决定是否更新本地资源，每次要更新记得替换
 
 var cacheList=[
     "/",
