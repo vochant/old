@@ -650,4 +650,9 @@ function uniInit()
 	AfterRuns();
 }
 
-window.onload=uniInit;
+function toUI()
+{
+	setTimeout(100,uniInit);
+}
+
+window.onload=toUI;
