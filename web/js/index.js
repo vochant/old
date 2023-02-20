@@ -43,40 +43,6 @@ function floader(filename,func)
 	};
 }
 
-var XHRST,xhrDone,req;
-
-async function ReadXHRM(filename)
-{
-	let xhr=new XMLHttpRequest();
-	xhrDone=false;
-	XHRST="/status/failed";
-	xhr.open('GET',filename,true);
-	xhr.send();
-	xhr.onreadystatechange=function(){
-		if (xhr.readyState==4&&xhr.status==200)
-		{
-			XHRST=xhr.responseText;
-		}
-		xhrDone=true;
-	};
-	while(!xhrDone)
-	{
-		await sleep(100);
-	}
-	return XHRST;
-}
-
-function pReadXHR(filename)
-{
-	ReadXHRM(filename).then(reqst=>req=reqst);
-	return req;
-}
-
-function ReadXHR(filename)
-{
-	return pReadXHR(filename)+"";
-}
-
 function query_apik(K)
 {
     return md5(K)=='1b914efcb2b51d1f82da57f27c5087a6';
@@ -93,30 +59,9 @@ function unbase(bstr,re)
 
 var base_bl="not-loaded",baddr;
 
-async function mLoad_base(kv)
-{
-	base_bl="non";
-	floader("https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base",function(_Fc){
-		base_bl=_Fc;
-	});
-	while(base_bl=="non")
-	{
-		await sleep(100);
-	}
-	console.log(base_bl);
-	baddr="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base";
-	return base_bl;
-}
-
-function pLoad_base(kv)
-{
-	mLoad_base(kv).then(reqst=>req=reqst);
-	return req;
-}
-
 function Load_base(kv)
 {
-	return pLoad_base(kv)+"";
+	return 'Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSWFJteFZVMjA1VjAxV2JETlhhMk0xVmpKS1IySkVUbGhoTVhCUVZteFZlRll5VGtsalJtaG9UVmhDVVZacVFtRlpWMDE1VTJ0V1ZXSkhhRzlVVmxaM1ZsWmFkR05GWkZSTmF6RTFWVEowVjFaWFNraGhSemxWVmpOT00xcFZXbUZrUjA1R1drWndWMDFFUlRGV1ZFb3dWakZhV0ZOcmFHaFNlbXhXVm0xNFlVMHhXbk5YYlVacVZtdGFNRlZ0ZUZOVWJVcEdZMFZ3VjJKVVJYZFpla3BIVmpGT2RWVnRhRk5sYlhoWFZtMHdlR0l4U2tkWGJHUllZbGhTV0ZSV2FFTlNiRnBZWlVaT1ZXSlZXVEpWYkZKRFZqSkZlVlJZYUZkU1JWcHlWVEJhVDJOc2NFaGpSazVYVWpOb2IxWXhaRFJpTVZWNFZXdGtXR0pyTlZsWmJGWmhZMVphZEdSSFJrNVNiRm93V2xWYVQxWlhTbFpqUldSYVRVWmFNMVpxU2t0V1ZrcFpXa1p3VjFKWVFrbFdiWEJIVkRGa1YyTkZaR2hTTW5oVVdWUk9RMWRzV1hoYVJGSnBUV3RzTlZadE5VOVdiVXBIVjJ4U1dtSkdXbWhaTW5oWFkxWktkRkpzVWxkaWEwcElWbXBLTkZReFdsaFRhMlJxVW0xNGFGVXdhRU5UUmxweFUydGFiRlpzV2xwWGExcDNZa2RGZWxGcmJGZFdNMEpJVmtSS1UxWXhWblZWYlhCVFlYcFdkMVp0Y0V0aU1sSnpWMjVTVGxkSFVsWlVWbHBYVGxaV2RHUkhkRmROVjFKSldWVmFjMWR0U2tkWGJXaGFUVlp3ZWxreU1VZFNiRkp6Vlcxc1UwMHhSalpXYWtvd1ZURlZlRmR1U2s1WFJYQnhWVzB4YjFZeFVsaE9WazVPVFZad2VGVXlkREJXTVZweVkwWndXR0V4Y0ROV2FrWkxWMVpHY21KR1pGZE5NRXBKVm10U1MxVXhXWGhYYmxaVllrZG9jRlpxVG05V1ZtUlhWV3M1VWsxcmJEUldNV2h2V1ZaS1JsTnRPVlZXYkhCWVZHeGFZVmRGTlZaUFZtUnBWbGhDU2xkV1ZtOVVNVnAwVW01S1QxWnNTbGhVVlZwM1ZrWmFjVkp1WkZOV2ExcDVWREZrYzFVd01IbGhSbXhYWWxoQ1RGUnJXbEpsUm1SellVWlNhRTFzU25oV1Z6RTBaREZrUjJKSVRtaFNlbXh6V1d0YWQyVkdWblJOVldSVlRXdHdSMVl5ZUhkWGJGcFhZMGhLVjFaRldreFdNVnBIWTIxS1IyRkdhRlJTVlhCS1ZtMTBVMU14VlhoWFdHaGhVMFphVmxscldrdGpSbHB4VkcwNVYxWnNjRWhYVkU1dllWVXhXRlZzYUZkTlYyaDJWMVphUzFKc1RuUlNiR1JwVjBVME1GWkhkR0ZoTWs1elYyNVNhMUp0YUZSVVZXaERUbFphU0dWSFJtcE5WMUl3VlRKMGExZEhTbGhoUjBaVlZteHdNMWxWV25kU2JIQkdUMVU1YVZKWVFqWlhWbFpyWXpGVmQwMUliR2hTYlhoWVdXeG9RMVJHVW5KWGJFcHNVbTFTZWxsVldsTmhSVEZ6VTI1b1YxWXpVbGhWZWtwSFVqRmFXVnBIYUZOV1ZGWlZWbGN4TkdReVZrZFdiR1JvVW5wc2IxUldXbmRsYkZsNVkwVk9XR0pHY0ZoWk1GSlBWMjFGZVZWclpHRldWMUpRVld4YWEyTXhjRWhpUm1oVFZsaENTMVp0TVRCVk1VMTRWbGhvV0ZkSGFGbFpiWGhoVmpGc2MxcEhPVmRTYlhoYVdUQmFhMkV3TVZkalJFSmFUVVpaZDFsV1ZYaGpiVXBGVld4a1RsWXlhREpXYWtKclV6RktjazVXWkZaaVJscFlXV3hhUm1ReFduUmpSV1JXVFZad01GVnRkRzlWUmxwMFZXczVXbFpGTlVSVWJGcHJWbFpHZEZKdGNFNVdNVWwzVmxSS01HSXlSa2RUYms1VVlsVmFWbFp0ZUhkTk1YQllaVWhLYkZZeFdrcFhhMXBQVkd4YWNtSXpaRmhpUmxweVdYcEdWbVZXVG5OaVJuQk9UVzFvV1ZkV1VrZGtNa1pIVjJ4V1UySkdjSE5WYlRGVFRWWlZlV042UmxoU2EzQmFWVmMxYjFZeFdYcGhTRnBXVmtWYVlWcFZXbXRrVmtwelZtMXNVMVpHV2pWV01XUXdXVmRSZVZaclpGZGliRXB5VlRCa1UyTkdWbkZSYm1SWFRWWnNOVnBGWXpWWFIwcEhZMFpvV2sxR1NsQldNakZHWlZaV2NscEhSbGRXTVVwUlZsZDRZV0V5VFhoalJXaG9VakpvVDFVd1ZrdE5iRnAwWTBWa1dsWXdWalJXYkdodlYwWmtTR0ZHV2xwaVdHaG9WbTE0YzJOc1pISmtSM0JUWWtad05GWlhNVEJOUmxsNFYyNU9hbEpYYUZoV2FrNVRWRVpzVlZGWWFGTldhM0I2VmtkNFlWVXlTa1pYV0hCWFZsWndSMVF4V2tOVmJFSlZUVVF3UFE9PQ==';
 }
 
 function Spliter(snum)
@@ -599,6 +544,42 @@ function Dateid()
 	return (tmpd.getFullYear()*400)+(tmpd.getMonth()*32)+tmpd.getDate();
 }
 
+function UpdatePluginCkr(xhrString)
+{
+	var latestVersion=Number(JSON.parse(xhrString).VersionCode);
+	if(latestVersion>Number(PlugConf.VersionCode))
+	{
+		if(PlugConf.Type=="auto")
+		{
+			floader(PlugConf.ScriptHost,function(__x){
+				window.localStorage["_userplugincode_"+i]=__x;
+			});
+			floader(PlugConf.ConfigHost,function(__x){
+				window.localStorage["_userpluginhead_"+i]=__x;
+			});
+			Plist[i][0]=window.localStorage["_userplugincode_"+i];
+			Plist[i][1]=window.localStorage["_userpluginhead_"+i];
+			PlugConf=JSON.parse(Plist[i][1]);
+			imsg("插件"+PlugConf.DisplayName+"已更新");
+		}
+		else if(PlugConf.Type=="redirect")
+		{
+			if(PlugConf.DisableWhenTimedOut=="true")Plist[i][0]="console.log('A plugin is diabled because version is too old.');";
+			else
+			{
+				var URL__="https://"+window.location.href.split("/")[2]+"/plugins/updater?id="+i;
+				if(doCheckUpgrade) mdui.alert("插件"+PlugConf.DisplayName+"的更新可用,点<a href=\""+URL__+"\">我</a>更新.");
+			}
+			//window.location.href="https://"+window.location.href.split("/")[2]+"/plugins/updater?ch="+Base64.encode(PlugConf.ConfigHost)+"&sh="+Base64.encode(PlugConf.ScriptHost)+"&cv="+Base64.encode(PlugConf.DisplayVersion);
+		}
+		else
+		{
+			if(PlugConf.DisableWhenTimedOut=="true")Plist[i][0]="console.log('A plugin is diabled because version is too old.');";
+			if(doCheckUpgrade) window.open("https://"+window.location.href.split("/")[2]+"/plugins/updater?id="+i);
+		}
+	}
+}
+
 function GetPluginList()
 {
 	if(!window.localStorage["_userplugin.c"])
@@ -617,36 +598,7 @@ function GetPluginList()
 		PlugConf=JSON.parse(Plist[i][1]);
 		if(PlugConf.EnableUpgrade=="true")
 		{
-			var xhrString=ReadXHR(PlugConf.ConfigHost);
-			if(xhrString=="/status/failed") continue;
-			var latestVersion=Number(JSON.parse(xhrString).VersionCode);
-			if(latestVersion>Number(PlugConf.VersionCode))
-			{
-				if(PlugConf.Type=="auto")
-				{
-					window.localStorage["_userplugincode_"+i]=ReadXHR(PlugConf.ScriptHost);
-					window.localStorage["_userpluginhead_"+i]=ReadXHR(PlugConf.ConfigHost);
-					Plist[i][0]=window.localStorage["_userplugincode_"+i];
-					Plist[i][1]=window.localStorage["_userpluginhead_"+i];
-					PlugConf=JSON.parse(Plist[i][1]);
-					imsg("插件"+PlugConf.DisplayName+"已更新");
-				}
-				else if(PlugConf.Type=="redirect")
-				{
-					if(PlugConf.DisableWhenTimedOut=="true")Plist[i][0]="console.log('A plugin is diabled because version is too old.');";
-					else
-					{
-						var URL__="https://"+window.location.href.split("/")[2]+"/plugins/updater?id="+i;
-						if(doCheckUpgrade) mdui.alert("插件"+PlugConf.DisplayName+"的更新可用,点<a href=\""+URL__+"\">我</a>更新.");
-					}
-					//window.location.href="https://"+window.location.href.split("/")[2]+"/plugins/updater?ch="+Base64.encode(PlugConf.ConfigHost)+"&sh="+Base64.encode(PlugConf.ScriptHost)+"&cv="+Base64.encode(PlugConf.DisplayVersion);
-				}
-				else
-				{
-					if(PlugConf.DisableWhenTimedOut=="true")Plist[i][0]="console.log('A plugin is diabled because version is too old.');";
-					if(doCheckUpgrade) window.open("https://"+window.location.href.split("/")[2]+"/plugins/updater?id="+i);
-				}
-			}
+			floader(PlugConf.ConfigHost,UpdatePluginCkr);
 		}
 		if(PlugConf.EnableBefore=="true")
 		{
