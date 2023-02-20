@@ -43,7 +43,7 @@ function floader(filename,func)
 	};
 }
 
-var XHRST,xhrDone,willDrop;
+var XHRST,xhrDone,req;
 
 async function ReadXHRM(filename)
 {
@@ -63,14 +63,13 @@ async function ReadXHRM(filename)
 	{
 		await sleep(100);
 	}
-	return 0;
+	return XHRST;
 }
 
 function ReadXHR(filename)
 {
-	willDrop=ReadXHRM(filename);
-	console.log(willDrop);
-	return XHRST;
+	ReadXHRM(filename).then(reqst=>req=reqst);
+	return req;
 }
 
 function query_apik(K)
@@ -101,16 +100,16 @@ async function mLoad_base(kv)
 		{
 			await sleep(100);
 		}
+		console.log(base_bl);
 		baddr="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base";
 	}
-	return 0;
+	return base_bl;
 }
 
 function Load_base(kv)
 {
-	willDrop=mLoad_base(kv);
-	console.log(willDrop);
-	return base_bl;
+	mLoad_base(kv).then(reqst=>req=reqst);
+	return req;
 }
 
 function Spliter(snum)
