@@ -33,11 +33,13 @@ function ltep(file_contents)
 function floader(filename,func)
 {
 	let xhr=new XMLHttpRequest();
-	xhr.open('GET',filename,false);
+	xhr.open('GET',filename,true);
 	xhr.send();
-	if (xhr.readyState==4&&xhr.status==200)
-	{
-		func(xhr.responseText);
+	xhr.onload=function(){
+		if (xhr.readyState==4&&xhr.status==200)
+		{
+			func(xhr.responseText);
+		}
 	}
 }
 
