@@ -42,11 +42,13 @@ function floader(filename,func)
 	};
 }
 
-var XHRST;
+var XHRST,xhrDone;
 
 function ReadXHR(filename)
 {
 	let xhr=new XMLHttpRequest();
+	xhrDone=false;
+	XHRST="/status/failed";
 	xhr.open('GET',filename,true);
 	xhr.send();
 	xhr.onreadystatechange=function(){
@@ -54,7 +56,11 @@ function ReadXHR(filename)
 		{
 			XHRST=xhr.responseText;
 		}
+		xhrDone=true;
 	};
+	while(!xhrDone)
+	{
+	}
 	return XHRST;
 }
 
@@ -177,7 +183,7 @@ function enCoder(_text,_apik)
 	if(!elsSetup)
 	{
 		elsSetup=true;
-		floader("jsdef.wli",function(_Text){
+		floader("https://"+window.location.href.split("/")[2]+"/regist/jsdef.wli",function(_Text){
 			els=_Text.split('\n');
 		});
 	}
@@ -560,16 +566,21 @@ function imsg(s)
 	mdui.snackbar({message:s,position:'bottom'});
 }
 
+function Dateid()
+{
+	var tmpd=new Date();
+	return (tmpd.getFullYear()*400)+(tmpd.getMonth()*32)+tmpd.getDate();
+}
+
 function GetPluginList()
 {
 	if(!window.localStorage["_userplugin.c"])
 	{
 		window.localStorage["_userplugin.c"]=0;
-		var dtr=new Date();
-		window.localStorage["_latest_version_check"]=dtr.getDate()-1+"";
+		window.localStorage["_latest_version_check"]=Dateid()-1+"";
 	}
-	var datr=new Date(),doCheckUpgrade=Number(window.localStorage["_latest_version_check"])!=datr.getDate();
-	window.localStorage["_latest_version_check"]=datr.getDate()+"";
+	var doCheckUpgrade=Number(window.localStorage["_latest_version_check"])!=Dateid();
+	window.localStorage["_latest_version_check"]=Dateid()+"";
 	PCount=Number(window.localStorage["_userplugin.c"]);
 	for(i=0;i<PCount;i++)
 	{
@@ -579,7 +590,9 @@ function GetPluginList()
 		PlugConf=JSON.parse(Plist[i][1]);
 		if(PlugConf.EnableUpgrade=="true")
 		{
-			var latestVersion=Number(JSON.parse(ReadXHR(PlugConf.ConfigHost)).VersionCode);
+			var xhrString=ReadXHR(PlugConf.ConfigHost);
+			if(xhrString=="/status/failed") continue;
+			var latestVersion=Number(JSON.parse(xhrString).VersionCode);
 			if(latestVersion>Number(PlugConf.VersionCode))
 			{
 				if(PlugConf.Type=="auto")
@@ -650,9 +663,4 @@ function uniInit()
 	AfterRuns();
 }
 
-function toUI()
-{
-	setTimeout(100,uniInit);
-}
-
-window.onload=toUI;
+window.onload=UniInit;
