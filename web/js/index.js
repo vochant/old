@@ -78,15 +78,20 @@ function unbase(bstr,re)
     return bstr;
 }
 
-var base_bl="not-loaded",baddr;
+var base_bl="not-loaded",baddr,base_lded;
 
 function Load_base(kv)
 {
 	if(base_bl=="not-loaded"||baddr!="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base")
 	{
+		base_lded=false;
 		floader("https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base",function(_Fc){
 			base_bl=_Fc;
+			base_lded=true;
 		});
+		while(!base_lded)
+		{
+		}
 		baddr="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base";
 	}
 	return base_bl;
@@ -184,7 +189,7 @@ function enCoder(_text,_apik)
 	{
 		elsSetup=true;
 		floader("https://"+window.location.href.split("/")[2]+"/regist/jsdef.wli",function(_Text){
-			els=_Text.split('\n');
+			els=_Text.split('\r\n');
 		});
 	}
 	for(i=0;i<_text.length;i++)
@@ -441,7 +446,8 @@ function BreakActivitionA()
 		var apik_frame2=Number(Spliter(apik_frame1));
 		var apik_framex=Number(Spliter(apik_frame2));
 		var apik_frame3=Spliter(apik_framex);
-		var targetKey=GetDix(BaseII(window.location.href.split("/")[2]),BaseII("IdTrustedRunner"),apik_frame3);
+		var targetKey=GetDix(BaseII(window.location.href.split("/")[2]),BaseII("IdTrustedRunner"),api_generateKey(apik_frame3)
+);
 		if(window.sessionStorage["__break__"]!=targetKey)
 		{
 			return false;
@@ -466,7 +472,7 @@ function BreakActivitionB()
 		var apik_frame2=Number(Spliter(apik_frame1));
 		var apik_framex=Number(Spliter(apik_frame2));
 		var apik_frame3=Spliter(apik_framex);
-		var targetKey=GetDix(BaseII(window.location.href.split("/")[2]),BaseII("IdTrustedRunner"),apik_frame3);
+		var targetKey=GetDix(BaseII(window.location.href.split("/")[2]),BaseII("IdTrustedRunner"),api_generateKey(apik_frame3));
 		if(getParam("nav")!=targetKey)
 		{
 			return false;
@@ -663,4 +669,4 @@ function uniInit()
 	AfterRuns();
 }
 
-window.onload=UniInit;
+window.onload=uniInit;
