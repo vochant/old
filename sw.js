@@ -12,7 +12,7 @@ version 6.2.[%d]: Plugin GUI update I [waiting] & Plugin marketplace update I [w
 version 7.0.[%d]: Plugin update I [waiting] & Homepage update II [waiting]
 
 */
-var cacheName = 'version-6-0-5'
+var cacheName = 'version-6-0-6'
 
 var cacheList=[
     "/",
