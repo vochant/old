@@ -35,7 +35,7 @@ function floader(filename,func)
 	let xhr=new XMLHttpRequest();
 	xhr.open('GET',filename,true);
 	xhr.send();
-	xhr.onload=function(){
+	xhr.onreadystatechange=function(){
 		if (xhr.readyState==4&&xhr.status==200)
 		{
 			func(xhr.responseText);
@@ -154,9 +154,10 @@ function enCoder(_text,_apik)
 	if(!elsSetup)
 	{
 		elsSetup=true;
-		floader("https://"+window.location.href.split("/")[2]+"/regist/jsdef.wli",function(_Text){
-			els=_Text.split('\r\n');
-		});
+		let xhr=new XMLHttpRequest();
+		xhr.open('GET',"https://"+window.location.href.split("/")[2]+"/regist/jsdef.wli",false);
+		xhr.send();
+		els=xhr.responseText.split("\r\n");
 	}
 	for(i=0;i<_text.length;i++)
 	{
