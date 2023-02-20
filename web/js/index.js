@@ -69,7 +69,7 @@ async function ReadXHRM(filename)
 function ReadXHR(filename)
 {
 	ReadXHRM(filename).then(reqst=>req=reqst);
-	return req.toString();
+	return req+"";
 }
 
 function query_apik(K)
@@ -109,7 +109,7 @@ async function mLoad_base(kv)
 function Load_base(kv)
 {
 	mLoad_base(kv).then(reqst=>req=reqst);
-	return req.toString();
+	return req+"";
 }
 
 function Spliter(snum)
