@@ -69,6 +69,7 @@ async function ReadXHRM(filename)
 function ReadXHR(filename)
 {
 	willDrop=ReadXHRM(filename);
+	console.log(willDrop);
 	return XHRST;
 }
 
@@ -108,6 +109,7 @@ async function mLoad_base(kv)
 function Load_base(kv)
 {
 	willDrop=mLoad_base(kv);
+	console.log(willDrop);
 	return base_bl;
 }
 
