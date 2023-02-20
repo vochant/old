@@ -35,12 +35,10 @@ function floader(filename,func)
 	let xhr=new XMLHttpRequest();
 	xhr.open('GET',filename,false);
 	xhr.send();
-	xhr.onreadystatechange=function(){
-		if (xhr.readyState==4&&xhr.status==200)
-		{
-			func(xhr.responseText);
-		}
-	};
+	if (xhr.readyState==4&&xhr.status==200)
+	{
+		func(xhr.responseText);
+	}
 }
 
 function query_apik(K)
