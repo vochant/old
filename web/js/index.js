@@ -45,7 +45,7 @@ function floader(filename,func)
 
 var XHRST,xhrDone;
 
-async function ReadXHR(filename)
+async function ReadXHRM(filename)
 {
 	let xhr=new XMLHttpRequest();
 	xhrDone=false;
@@ -63,6 +63,12 @@ async function ReadXHR(filename)
 	{
 		await sleep(100);
 	}
+	return 0;
+}
+
+function ReadXHR(filename)
+{
+	ReadXHRM(filename);
 	return XHRST;
 }
 
@@ -82,7 +88,7 @@ function unbase(bstr,re)
 
 var base_bl="not-loaded",baddr;
 
-async function Load_base(kv)
+async function mLoad_base(kv)
 {
 	if(base_bl=="not-loaded"||baddr!="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base")
 	{
@@ -96,9 +102,14 @@ async function Load_base(kv)
 		}
 		baddr="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base";
 	}
-	return base_bl;
+	return 0;
 }
 
+function Load_base(kv)
+{
+	mLoad_base(kv);
+	return base_bl;
+}
 
 function Spliter(snum)
 {
