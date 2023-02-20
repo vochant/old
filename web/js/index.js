@@ -651,7 +651,7 @@ function uniInit()
 	}
     floader("index.dmi",checkDir);
 	var vConsole=new window.VConsole();
-	eruda.init();
+	//eruda.init();
 	AfterRuns();
 }
 
