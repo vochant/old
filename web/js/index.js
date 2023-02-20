@@ -21,6 +21,7 @@ function Lr(e){throw new RangeError(qr[e])}function zr(e,r){for(var t=e.length,n
 
 //main
 
+const sleep=(delay)=>new Promise((resolve)=>setTimeout(resolve,delay));
 
 var curact="void";
 
@@ -60,6 +61,7 @@ function ReadXHR(filename)
 	};
 	while(!xhrDone)
 	{
+		sleep(100);
 	}
 	return XHRST;
 }
@@ -90,6 +92,7 @@ function Load_base(kv)
 		});
 		while(base_bl=="non")
 		{
+			sleep(100);
 		}
 		baddr="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base";
 	}
