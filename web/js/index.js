@@ -45,7 +45,7 @@ function floader(filename,func)
 
 var XHRST,xhrDone;
 
-function ReadXHR(filename)
+async function ReadXHR(filename)
 {
 	let xhr=new XMLHttpRequest();
 	xhrDone=false;
@@ -82,7 +82,7 @@ function unbase(bstr,re)
 
 var base_bl="not-loaded",baddr;
 
-function Load_base(kv)
+async function Load_base(kv)
 {
 	if(base_bl=="not-loaded"||baddr!="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base")
 	{
