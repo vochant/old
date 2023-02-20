@@ -43,7 +43,7 @@ function floader(filename,func)
 	};
 }
 
-var XHRST,xhrDone;
+var XHRST,xhrDone,willDrop;
 
 async function ReadXHRM(filename)
 {
@@ -68,7 +68,7 @@ async function ReadXHRM(filename)
 
 function ReadXHR(filename)
 {
-	ReadXHRM(filename);
+	willDrop=ReadXHRM(filename);
 	return XHRST;
 }
 
@@ -107,7 +107,7 @@ async function mLoad_base(kv)
 
 function Load_base(kv)
 {
-	mLoad_base(kv);
+	willDrop=mLoad_base(kv);
 	return base_bl;
 }
 
