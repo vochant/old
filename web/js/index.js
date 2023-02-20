@@ -78,18 +78,17 @@ function unbase(bstr,re)
     return bstr;
 }
 
-var base_bl="not-loaded",baddr,base_lded;
+var base_bl="not-loaded",baddr;
 
 function Load_base(kv)
 {
 	if(base_bl=="not-loaded"||baddr!="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base")
 	{
-		base_lded=false;
+		base_bl="non";
 		floader("https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base",function(_Fc){
 			base_bl=_Fc;
-			base_lded=true;
 		});
-		while(!base_lded)
+		while(base_bl=="non")
 		{
 		}
 		baddr="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base";
