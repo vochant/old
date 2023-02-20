@@ -74,7 +74,7 @@ function pReadXHR(filename)
 
 function ReadXHR(filename)
 {
-	return pReadXHR(filename).toString();
+	return pReadXHR(filename)+"";
 }
 
 function query_apik(K)
@@ -95,19 +95,16 @@ var base_bl="not-loaded",baddr;
 
 async function mLoad_base(kv)
 {
-	if(base_bl=="not-loaded"||baddr!="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base")
+	base_bl="non";
+	floader("https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base",function(_Fc){
+		base_bl=_Fc;
+	});
+	while(base_bl=="non")
 	{
-		base_bl="non";
-		floader("https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base",function(_Fc){
-			base_bl=_Fc;
-		});
-		while(base_bl=="non")
-		{
-			await sleep(100);
-		}
-		console.log(base_bl);
-		baddr="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base";
+		await sleep(100);
 	}
+	console.log(base_bl);
+	baddr="https://vochant.github.io/base_"+Base64.encode("Vochantia")+Base64.encode(kv+"")+".base";
 	return base_bl;
 }
 
@@ -119,7 +116,7 @@ function pLoad_base(kv)
 
 function Load_base(kv)
 {
-	return pLoad_base(kv).toString();
+	return pLoad_base(kv)+"";
 }
 
 function Spliter(snum)
