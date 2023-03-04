@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink mdui-appbar-with-toolbar">
+    <head>
+        <title>Vochantia</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <link rel="stylesheet" href="../web/css/mdui.min.css"/>
+        <script src="../web/js/mdui.min.js"></script>
+        <script src="../web/js/index.js"></script>
+        <link rel="icon" href="../web/img/viahead.png">
+        <script>
+            function help_wt()
+            {
+                mdui.alert("Windows Terminal是一款由微软出品的Windows平台终端软件,默认内置命令提示符、Windows PowerShell和Azure Cloud Shell,并且可以在用户安装兼容的软件时自动添加,如WSA发行版、Git Bash、VisualStudio终端、新版PowerShell等。采用美观的等宽字体,符合程序员的美学,同时采用Windowds 11的设计风格,还可以安装插件、自定义视觉效果、多标签页、分屏……");
+            }
+
+            function help_7z()
+            {
+                mdui.alert("7-zip是一款压缩软件,其特点为体积小、兼容广、无广告、开源,兼容多种压缩包格式,压缩时兼容自定义格式、压缩等级、压缩方法、字典大小、单词大小、故实数据大小、CPU线程数,可以创建自解压程序,可以使用命令行,可以分卷,可以添加密码并且自定义加密算法,打开压缩包可以显示特征……界面简洁,可以自定义文件关联。<br><br>好消息!命令行可以安装:<br>Linux: sudo apt-get install p7zip<br>Termux: pkg install 7zip<br>MacOS Brew: brew install p7zip<br>Windows Winget: winget install 7zip.7zip");
+            }
+
+            function help_pp()
+            {
+                mdui.alert("PotPlayer是一款播放器,没有水印,支持HDR,支持自定义速率,支持AB循环,音频可视化,可配置内容多,格式兼容广(甚至包括停止支持的flv!)看不清,界面简洁无广告,支持播放列表,支持额外解码器。")
+            }
+
+            function help_tb()
+            {
+                mdui.alert("图吧工具箱是一款综合电脑管理软件,本质上它没有任何功能,但是集成了很多实用的软件,不会自动捆绑,打开即安装,并且自动安装不打扰,同时无广告、自启,安装包是自解压程序,还是属于绿色软件(免安装软件),直接删除文件夹即可卸载。其功能包括参数查看(CPU-Z/AIDA64/GPU-Z/DiskInfo/SSDZ/屏幕数据检测/HWiNFO等),管理工具(驱动安装/系统激活/DiskGenius/低级格式化工具/Ventoy等),测试工具(Prime95/SuperPI/MemTest/Furmark等)等一系列工具软件。");
+            }
+
+            function help_dev()
+            {
+                mdui.alert("Dev-C++也许是最适合日常使用的IDE了,虽然其显示风格相对老旧,但是内置编译器,自动高亮显示,自动编译运行,兼容C/C++、Resources、Makefile等文件,函数自动提示,带有结构体提示,小型开发效率高.官方版本支持到最高C++11,而第三方版本已经支持到C++2a了,由于其开源许可,你也开源立即创建一个分支版本。");
+            }
+
+            function help_vsc()
+            {
+                mdui.alert("Microsoft Visual Studio Code是微软出品的全新编辑器,设计较为现代,使用Chromium内核,兼容大量格式,安装C++拓展后对C++语言支持极高.除了C++拓展,还支持非常多的拓展,比如简体中文语言包是常用的拓展之一,甚至支持内嵌洛谷和QQ!同时,它也支持Live Share/Git等工具,开发效率更上一层楼。");
+            }
+
+            function help_npp()
+            {
+                mdui.alert("Notepad++是一款开源的文本编辑器,在支持多种语言的同时保持轻量,总体风格和Dev-C++类似,但是支持更广。唯一缺点是作者把自己的不良政治观点强行和软件联系在一起(作者是台湾人,懂的都懂),至少目前软件没有实际添加过此类内容(很可能的一个原因是作者希望开源,但是关于政治的内容是违反开源协议的。),如果实在反感,NotepadNext或者Notepad--可以提供类似的体验。")
+            }
+
+            function help_vim()
+            {
+                mdui.alert("Vim是一款基于命令行的编辑器,在Windows平台下有GUI分支版本,多个Linux发行版自带,是vi的拓展/跨平台版本。在Windows系统安装后,开始菜单会出现Vim文件夹,其中的Vim是原生版本,gVim是GUI版本,gVim Easy是适合普通GUI编辑器操作的gVim。新手推荐gVim Easy,而老手更加喜欢Vim/运行框输入Vim/命令提示符打开Vim。普通版本Vim操作时,按i可以进入编辑模式,按Esc退出,按:可以输入指令,包括q!不保存退出,wq保存并退出,q退出(已经编更改会提示使用q!),enew新建,new新窗口新建,e打开,close关闭,sav另存为等,也支持大量快捷键操作,熟练后效率极高。<br><br>好消息!命令行可以安装:<br>Linux: apt-get install vim<br>Termux: pkg install vim<br>MacOS Brew: brew install vim<br>Windows Winget: winget install -e --id vim.vim");
+            }
+
+            function help_st()
+            {
+                mdui.alert("Sublime Text是一款好用的文本编辑器,UI美观,跨平台,支持多语法,等宽字体需要手动调整,支持编译,但是汉化比较困难。");
+            }
+
+            function help_vs()
+            {
+                mdui.alert("Visual Studio是一款由微软出品的IDE,由于内容量巨大,内存占用已经使用GiB作为单位了,而这还没有算任何附加包。常用的附加包包括桌面平台C++、移动平台C++、桌面平台通用开发、Web开发、Python、Unity等,都占用数GiB的空间。但是,Visual Studio非常适合开发大型项目,比如Minecraft for Windows、Bedrock Dedicated Server等均是使用Visual Studio开发的。");
+            }
+
+            function help_vc6()
+            {
+                mdui.alert("Visual C++ 6.0是一款微软于1998年开发的C++ IDE,虽然网上常说需要调Windows XP兼容性,但是在未调整兼容性的测试中所有功能表现良好。该软件虽有二十余年的历史,但是至今仍活跃于Windows API的教学中。");
+            }
+
+            function help_as()
+            {
+                mdui.alert("Android Studio是一款Google开发的安卓IDE,是绝大多数安卓软件开发的地方,同时也自带安卓模拟器。作为移动平台开发者的必备,国家也开放了developer.google.cn(谷歌大陆域名,绝大多数功能已经弃用)和download.google.com(谷歌下载服务器,IP和google.com不同)的访问。");
+            }
+
+            function help_de()
+            {
+                mdui.alert("DevEco是目前唯一专门为Harmony OS设计的IDE,也兼容HarmonyOS虚拟机,显然由华为开发,是国产的移动平台IDE。由于HarmonyOS原生应用和Android原生应用的差异,此IDE是有必要存在的,比如HarmonyOS中raw移动到了rawfile,anim移动到的animations,res移动到了resources,并且很多xml都换成了json,甚至包括主描述文件AndroidManifest.xml,所以此IDE是专门为这些差异而生的。");
+            }
+
+            function help_xc()
+            {
+                mdui.alert("Xcode是Apple为iOS、macOS等系统设计的IDE,缺点是目前仅支持安装在macOS上,设计符合macOS的设计,兼容Apple的原生UI系统SwiftUI,内置iOS等系统的模拟器。");
+            }
+
+            function help_md()
+            {
+                mdui.alert("Typora是一款Chromium内核的Markdown(*.md)编辑器,常见的项目一般都会带有一个README.md就是Markdown源文件.Typora支持可视化+源双模式(就是一个渲染一个不渲染),使用提供的app.asar替换默认的即可轻松白嫖,体验最优秀的Markdown编辑器。在安装Pandoc后,Typora将添加多种文件格式的转换,你的Markdown将可导出为包括Microsoft Word文档、PDF文档等格式。");
+            }
+
+            function help_em()
+            {
+                mdui.alert("EmEditor是一款功能丰富的文本编辑器,除大量功能以外,最引人注目的是Hex编辑功能:你可以在左边16进制右边有对照字符区的模式下编辑,不会因为编码错误损坏文件,在左边框选就会在右边预览.请不要下载Microsoft Store版!仅桌面版可以使用网传的激活码白嫖Pro版。");
+            }
+
+            function help_mte()
+            {
+                mdui.alert("Minption Text Editor是一款我自制的文本编辑器,可以看作Dev-C++的MDI编辑器的汉化版,目前正在计划移植到Unicode编码并且使用Comctl 6.0以匹配新版的界面风格。");
+            }
+
+            function help_mgw()
+            {
+                mdui.alert("MinGW是一款常见的C/C++编译器,安装稍有些麻烦,并且最新的MinGW 9.3.0非常领先。如果是喜欢使用VSCode等只带语法不带编译器的编辑器,选择安装一个MinGW也许是不错的选择.安装好安装中心以后,右侧勾选MinGW基本和C/C++基本,左上角依次点击Installation->Apply Changes即可安装C/C++编译器。");
+            }
+
+            function help_py()
+            {
+                mdui.alert("Python也许是一款非常适合日常使用的非竞赛语言,它最大的长处是方便的语法、丰富的附属了,同时也很适合开发AI。可能需要大量代码完成的文本和图片互转,在使用Pillow的情况下短短几十行就可以完成了。");
+            }
+
+            function help_njs()
+            {
+                mdui.alert("Node.js是一款跨平台的JavaScript运行时环境,除此之外其内置的NPM也可以安装很多东西,比如可以把网站转成应用程序的工具Nativefier就是基于Node.js的。");
+            }
+
+            function help_git()
+            {
+                mdui.alert("Git是一款仓库管理软件,可以连接Git云服务器、上传或下载文件、克隆仓库到本地、上传仓库…………同时,它还支持登录,登录模块兼容GitHub,配合Git LFS即可实现GitHub大文件上传。同时,安装Git时可以选择安装一个Bash,这可以在Windows下使用Windows没有的命令,或者输入重定向,再或者Shell源文件…………并且这些命令都是已经为Windows重新设计的,原生兼容Windows,不需要Linux模拟器,速度和性能均比虚拟机套Linux更优秀。");
+            }
+
+            function help_jv()
+            {
+                mdui.alert("Java运行时环境(JRE,Java Runtime Environment)和Java开发工具包(JDK,Java Development Kits)是Java的两种呈现形式,任意一种都可以作为Java应用程序的环境。对于方块人们而言,Java8是Minecraft Pre-Classic到1.16的必备和旧版服务器必备,Java11是Mod开发必备和中等版本服务器必备,Java16是1.17客户端/服务端必备,Java17是1.18+客户端/服务端必备。对于其他人,也有很多抄袭可以在JVM上运行。");
+            }
+
+            function help_vm()
+            {
+                mdui.alert("VMware Workstation Pro是一款优秀的虚拟机软件,支持自定义硬件等选项,可以映射硬盘,相对资源占用较低,安装VMware Tools可提高主系统和虚拟机的联系。对于Windows虚拟机,Unity模式虽不尽人意,但仍然可以把虚拟机的软件搬到实体机中,这是别的虚拟机想都不敢想的功能,VMware敢当第二就找不出第一。这是付费软件,但是网上仍然有很多激活码是有效的,比如我使用的第16版就是使用某个激活码激活的。");
+            }
+
+            function help_wx()
+            {
+                mdui.alert("微信不用说吧...中国人最爱用的软件,没有之一。好消息,电脑可以用!而且功能实现大半。作为电脑用户,显然搞事情更加容易。");
+            }
+
+            function help_qq()
+            {
+                mdui.alert("QQ也不用多说,上个时代最主要的聊天工具,如今年轻人的交流群/官方群等非熟人聊天平台,对PC支持更加完善且历史甚至比手机版久远。");
+            }
+        </script>
+    </head>
+    <body class="mdui-loaded">
+        <header class="mdui-appbar mdui-appbar-fixed">
+            <div class="mdui-toolbar mdui-color-theme">
+                <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="../">
+                    <i class="mdui-icon material-icons">arrow_back</i>
+                </a>
+                <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target:'#main-drawer',swipe:true}">
+                    <i class="mdui-icon material-icons">menu</i>
+                </span>
+                <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="../">
+                    <i class="mdui-icon material-icons">home</i>
+                </a>
+                <a class="mdui-typo-title">信奥 - Vochantia</a>
+            </div>
+        </header>
+        <div class="mc-drawer mdui-drawer mdui-shadow-6 mdui-drawer-close" id="main-drawer">
+            
+            <div class="mdui-list">
+                <div class="mdui-subheader">信奥</div>
+                <a class="mdui-list-item mdui-ripple" href="./">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">star</i>
+                    <div class="mdui-list-item-content">推荐</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="./oj">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">layers</i>
+                    <div class="mdui-list-item-content">Online Judge</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="./tool">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">local_offer</i>
+                    <div class="mdui-list-item-content">工具站</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple mdui-list-item-active" href="./applications">
+                    <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink">apps</i>
+                    <div class="mdui-list-item-content">应用程序</div>
+                </a>
+                <div class="mdui-subheader">主站</div>
+                <a class="mdui-list-item mdui-ripple" href="../">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../ros">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">storage</i>
+                    <div class="mdui-list-item-content">存储</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../links/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+                    <div class="mdui-list-item-content">链接</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple mdui-list-item-active" href="./">
+                    <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink">videogame_asset</i>
+                    <div class="mdui-list-item-content">游戏</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../blog/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">book</i>
+                    <div class="mdui-list-item-content">博客</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../gitalk/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">message</i>
+                    <div class="mdui-list-item-content">讨论</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../oi/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">code</i>
+                    <div class="mdui-list-item-content">信奥</div>
+                </a>
+                <a class="mdui-list-item mdui-ripple" href="../tools/">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">apps</i>
+                    <div class="mdui-list-item-content">工具</div>
+                </a>
+                <div class="mdui-subheader">附加</div>
+                <a class="mdui-list-item mdui-ripple" href="../helper">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                    <div class="mdui-list-item-content">本站帮助</div>
+                </a>
+                <div class="mdui-divider"></div>
+            </div>
+        </div>
+        <div class="mdui-container">
+            <div class="mdui-typo">
+                <h1 class="title mdui-text-color-theme">应用程序列表<br><small>基本上是新电脑所有的需求了</small></h1>
+            </div>
+            <br><br>
+            <h3 class="mdui-typo article-title">[基本]真·装机必备</h3><br>
+            <div class="mdui-typo">
+                <a href="javascript:help_wt()"><strong>Windows Terminal</strong></a>:<a href="ms-windows-store://pdp/?ProductId=9n0dx20hk701&referrer=bingwebsearch&ocid=bingwebsearch">Store链接</a>|<a href="https://apps.microsoft.com/store/detail/9N0DX20HK701?hl=zh-cn&gl=CN">网站链接</a><br>
+                <a href="javascript:help_7z()"><strong>7-zip file manager</strong></a>:<a href="https://www.7-zip.org/">官网链接</a><br>
+                <a href="javascript:help_pp()"><strong>PotPlayer</strong></a>:<a href="https://potplayer.daum.net">官网链接</a><br>
+                <a href="javascript:help_tb()"><strong>图吧工具箱</strong></a>:<a href="http://www.tbtool.cn">官网链接</a><br>
+            </div>
+            <br><br>
+            <h3 class="mdui-typo article-title">[IDE]日常使用IDE</h3><br>
+            <div class="mdui-typo">
+                <a href="javascript:help_dev()"><strong>Dev-C++</strong></a>:<a href="https://sourceforge.net/projects/orwelldevcpp/">官方源</a>|<a href="https://github.com/Embarcadero/Dev-Cpp">第三方新版</a><br>
+                <a href="javascript:help_vsc()"><strong>VS Code</strong></a>:<a href="https://code.visualstudio.com/">官网</a><br>
+                <a href="javascript:help_npp()"><strong>Notepad++</strong></a>:<a href="https://github.com/notepad-plus-plus/notepad-plus-plus/releases/latest">GitHub最新版本</a>|<del><abbr title="被墙了">官方网站</abbr></del><br>
+                <a href="javascript:help_vim()"><strong>Vim</strong></a>:<a href="https://www.vim.org">官网</a><br>
+                <a href="javascript:help_st()"><strong>Sublime Text</strong></a>:<a href="https://www.sublimetext.com">官网</a><br>
+            </div>
+            <br><br>
+            <h3 class="mdui-typo article-title">[IDE]大型IDE</h3><br>
+            <div class="mdui-typo">
+                <a href="javascript:help_vs()"><strong>Visual Studio</strong></a>:<a href="https://visualstudio.microsoft.com">官网</a><br>
+                <a href="javascript:help_vc6()"><strong>Visual C++ 6.0</strong></a>:<a href="../ros/file_vc6_zip_archive">voDisk</a><br>
+                <a href="javascript:help_as()"><strong>Android Studio</strong></a>:<a href="https://developer.android.google.cn/studio">官网</a><br>
+                <a href="javascript:help_de()"><strong>DevEco</strong></a>:<a href="https://developer.harmonyos.com/cn/develop/deveco-studio">官网</a><br>
+                <a href="javascript:help_xc()"><strong>Xcode</strong></a>:<a href="https://developer.apple.com/cn/xcode">官网</a><br>
+            </div>
+            <br><br>
+            <h3 class="mdui-typo article-title">[编辑器]辅助编辑器</h3><br>
+            <div class="mdui-typo">
+                <a href="javascript:help_md()"><strong>Typora</strong></a>:<a href="../ros/file_typora_zip_archive">voDisk白嫖</a><br>
+                <a href="javascript:help_em()"><strong>EmEditor</strong></a>:<a href="https://zh-cn.emeditor.com">官网</a><br>
+                <a href="javascript:help_mte()"><strong>MTE</strong></a>:<a href="../sp/mteprod">官网</a><br>
+            </div>
+            <br><br>
+            <h3 class="mdui-typo article-title">[开发]实用工具</h3>
+            <div class="mdui-typo">
+                <a href="javascript:help_mgw()"><strong>MinGW</strong></a>:<a href="https://osdn.net/projects/mingw/">下载地址</a><br>
+                <a href="javascript:help_py()"><strong>Python</strong></a>:<a href="https://www.python.org">官网</a><br>
+                <a href="javascript:help_git()"><strong>Git</strong></a>:<a href="https://git-scm.com">官网</a><br>
+                <a href="javascript:help_njs()"><strong>Node.js</strong></a>:<a href="https://nodejs.org">官网</a><br>
+                <a href="javascript:help_jv()"><strong>Java</strong></a>:<a href="https://www.java.com">8</a>|<a href="https://www.oracle.com/cn/java/technologies/javase/jdk11-archive-downloads.html">11</a>|<a href="https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html">16</a>|<a href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">17</a><br>
+            </div>
+            <br><br>
+            <h3 class="article-title">[综合]实用工具</h3>
+            <div class="mdui-typo">
+                <a href="javascript:help_vm()"><strong>VMWare</strong></a>:<a href="https://www.vmware.com/go/getworkstation-win">官网</a><br>
+                <a href="javascript:help_wx()"><strong>微信</strong></a>:<a href="https://weixin.qq.com">官网</a><br>
+                <a href="javascript:help_qq()"><strong>QQ</strong></a>:<a href="https://im.qq.com/index">官网</a><br>
+            </div>
+            <br><br><br>
+        </div>
+    </body>
+</html>
