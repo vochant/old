@@ -9,6 +9,12 @@
         <script src="../web/js/mdui.min.js"></script>
         <script src="../web/js/index.js"></script>
         <link rel="icon" href="../web/img/viahead.png">
+        <script>
+            function sp(src1)
+            {
+                document.getElementById("i").src=src1;
+            }
+        </script>
     </head>
     <body class="mdui-loaded">
         <header class="mdui-appbar mdui-appbar-fixed">
@@ -92,17 +98,24 @@
             </div>
             <br><br>
             <div class="mdui-typo">
-                <a href="https://www.luogu.com.cn">Luogu OJ(The most big OJ in China)(created by kkksc03)</a><br>
-                <a href="https://bmh.coderlands.com">bmhOJ(My currently own school's OJ)</a><br>
-                <a href="https://codeforces.com">CodeForces(An Russian OJ,the problems are a little hard)</a><br>
-                <a href="https://www.hydro.ac">Hydro OJ(An open-source OJ)(created by Macesuted)</a><br>
-                <a href="http://www.iai.sh.cn">IAI(3 levels of problems every month)(shared by WT)</a><br>
-                <a href="https://www.acwing.com">AcWing(Easy problems every week for noobs)</a><br>
-                <a href="https://onlinejudge.org">UVA(The most classical OJ)</a><br>
-                <a href="https://www.spoj.com">SPOJ(A beautiful OJ)</a><br>
-                <a href="https://www.atcoder.jp">AtCoder(An OJ from Japan)</a><br>
-                <a href="https://course.coderlands.com">Coderlands(My after-school class)</a><br>
-                <a href="http://47.96.42.133:8888/">HLOJ(Forked from Hydro)(shared by docxjun)</a>
+                <a href="https://www.luogu.com.cn">Luogu OJ(国内最大的OJ,功能齐全,由kkksc03创建)</a><a href="javascript:sp('../web/img/luogu.jpeg')">Preview</a><br>
+                <a href="https://bmh.coderlands.com">bmhOJ(白马湖/湖畔自己的OJ)</a><a href="javascript:sp('../web/img/bmhoj.jpeg')">Preview</a><br>
+                <a href="https://codeforces.com">CodeForces(一个俄联邦的OJ,世界大佬聚集地)</a><a href="javascript:sp('../web/img/cf.jpeg')">Preview</a><br>
+                <a href="https://www.hydro.ac">Hydro OJ(一款开源的OJ,主打高自由度,由高中生大佬Macesuted开发)</a><a href="javascript:sp('../web/img/hydro.jpeg')">Preview</a><br>
+                <a href="http://www.iai.sh.cn">IAI(一个上海的OJ,每月都有不同难度的月赛,感谢WT分享)</a><a href="javascript:sp('../web/img/iai.jpeg')">Preview</a><br>
+                <a href="https://www.acwing.com">AcWing(每周都有一些比较简单的题目,还可以当IDE用,感谢WT分享)</a><a href="javascript:sp('../web/img/acwing.jpeg')">Preview</a><br>
+                <a href="https://onlinejudge.org">UVA(几乎是最古老和经典的OJ,访问较慢)</a><a href="javascript:sp('../web/img/uva.jpeg')">Preview</a><br>
+                <a href="https://www.spoj.com">SPOJ(一个较为有名的美观OJ)</a><a href="javascript:sp('../web/img/spoj.jpeg')">Preview</a><br>
+                <a href="https://www.atcoder.jp">AtCoder(一个日本的OJ,主要可以打比赛)</a><a href="javascript:sp('../web/img/at.jpeg')">Preview</a><br>
+                <!--a href="https://course.coderlands.com">Coderlands(某培训班的OJ)</a><br-->
+                <a href="http://47.96.42.133:8888/">HLOJ(针对外网开放的版本,Hydro下游分支,感谢docxjun分享)</a><a href="javascript:sp('../web/img/hlhydro.jpeg')">Preview</a><br>
+                <a href="https://uoj.ac/">Universal OJ(即UOJ,由vfleaking创建)</a><a href="javascript:sp('../web/img/uoj.jpeg')">Preview</a><br>
+                <a href="https://vijos.org/">Vijos(Hydro框架老祖宗,高效信息学在线评测系统)</a><a href="javascript:sp('../web/img/vijos.jpeg')">Preview</a><br>
+                <a href="https://loj.ac/">LibreOJ(bmhOJ框架老祖宗)</a><a href="javascript:sp('../web/img/libreoj.jpeg')">Preview</a>
+            </div>
+            <div class="mdui-container mdui-col-xs-5 mdui-shadow-4">
+                <h4 class="article-title">预览区域(均已登录个人用户)</h4><br><br>
+                <img class="mdui-img-fluid mdui-img-rounded" src="../web/img/empty_ojpreview.png" alt="Preview an OJ there." id="i"/>
             </div>
             <br><br><br>
         </div>
