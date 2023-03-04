@@ -492,21 +492,26 @@ function GetActive()
     return true;
 }
 
+var FMAT,doA=false;
+
 function checkDir(fmatc)
 {
 	if(BreakActivition())
 	{
+		doA=true;
 		return;
 	}
     if(GetActive())
     {
+		doA=true;
         return;
     }
     if(fmatc=="nreq")
     {
+		doA=true;
         return;
     }
-    window.location.href=fmatc;
+    FMAT=fmatc;
 }
 
 var PlugConf,Afters=new Array();
