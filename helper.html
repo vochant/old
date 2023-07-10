@@ -98,96 +98,9 @@
 				注意: C++≠Objective-C≠Objective-C++! C++和Objective-C是对C的两种截然不同的面向对象拓展, 而Objective C++就是Objective C和C++的缝合怪, 同时兼容C、C++、Objective-C的语法。<br>
 			    举个例子, 创建一个简简单单的Integer类存储一个32位整数, 提供2个构造函数和1个输出函数, 创建2个然后分别输出。<br>
 			    C++是:<br>
-			    <code>
-					// C++
-
-					#include <bits/stdc++.h> // C++标准
-					
-					class Integer //类定义
-					{
-						private:
-							int x; // 类成员
-						
-						public:
-							Integer() // 空构造函数
-							{
-								x = 0;
-							}
-							
-						    Integer(int k) // 带一个参数的构造函数
-							{
-								x = k;
-							}
-							
-							~Integer() // 解构函数
-							{
-						
-							}
-							
-							void Output() // 实例方法
-							{
-								std::cout &lt;&lt; x &lt;&lt; std::endl;
-							}
-					};
-
-					int main() // 入口函数
-					{
-						Integer a, b(1); // 创建类
-						a.Output(); // 调用类成员函数
-						b.Output();
-						return 0;
-					}
-			    </code><br>
+			    <code>// C++<br><br>#include &lt;bits/stdc++.h&gt; // C++标准<br><br>class Integer //类定义<br>{<br>&#9;private:<br>&#9;&#9;int x; // 类成员<br><br>&#9;&#9;public:<br>&#9;&#9;Integer() // 空构造函数<br>&#9;&#9;{<br>&#9;&#9;&#9;x = 0;<br>&#9;&#9;}<br><br>&#9;&#9;Integer(int k) // 带一个参数的构造函数<br>&#9;&#9;{<br>&#9;&#9;&#9;x = k;<br>&#9;&#9;}<br><br>&#9;&#9;~Integer() // 解构函数<br><br>&#9;&#9;{ }<br><br>&#9;&#9;void Output() // 实例方法<br>&#9;&#9;{<br>&#9;&#9;&#9;std::cout &lt;&lt; x &lt;&lt; std::endl;<br>&#9;&#9;}<br>};<br><br>int main() // 入口函数<br>{<br>&#9;Integer a, b(1); // 创建类<br>&#9;a.Output(); // 调用类成员函数<br>&#9;b.Output();<br>&#9;return 0;<br>}</code><br>
 				Objective-C是:<br>
-				<code>
-					// Objective-C
-
-					#import <Foundation/Foundation.h> // Objective-C标准, Objective-C常以import代替include
-					
-					@interface Integer : NSObject // 以默认权限为protected创建类, NSObject是Objective-C的根类
-					{
-						@private
-							int x; // 类成员
-					}
-					
-					-(id) init // 空构造函数
-					{
-						if (self = [super init]) // 等待父类(超类)初始化
-						{
-							x = 0;
-						}
-						return self;
-					}
-
-					-(id) initWithInt: (int) k // 含参构造函数
-					{
-						if (self = [super init])
-						{
-							x = k;
-						}
-						return self;
-					}
-
-					-(void) dealloc // 析构函数
-					{
-						[super dealloc]; // 得待父类(超类)析构
-					}
-
-					-(id) Output //实例方法
-					{
-						NSLog(@"%i", x);
-					}
-
-					@end // 结束定义类
-
-					int main() // 入口函数
-					{
-						Integer* a = [Integer new], b = [[Integer alloc] initWithInt: 1];
-						[a Output];
-						[b Output];
-						return 0;
-					}
-				</code><br>
+				<code>// Objective-C<br><br>#import &lt;Foundation/Foundation.h&gt; // Objective-C标准, Objective-C常以import代替include<br><br>@interface Integer : NSObject // 以默认权限为protected创建类, NSObject是Objective-C的根类<br>{<br>&#9;@private<br>&#9;&#9;int x; // 类成员<br>}<br>-(id) init // 空构造函数<br>{<br>&#9;if (self = [super init]) // 等待父类(超类)初始化<br>&#9;{<br>&#9;&#9;x = 0;<br>&#9;}<br>&#9;return self;<br>}<br><br>-(id) initWithInt: (int) k // 含参构造函数<br>{<br>&#9;if (self = [super init])<br>&#9;{<br>&#9;&#9;x = k;<br>&#9;}<br>&#9;return self;<br>}<br><br>-(void) dealloc // 析构函数<br>{<br>&#9;[super dealloc]; // 得待父类(超类)析构<br>}<br><br>-(id) Output //实例方法<br>{<br>&#9;NSLog(@"%i", x);<br>}<br><br>@end // 结束定义类<br><br>int main() // 入口函数<br>{<br>&#9;Integer* a = [Integer new], b = [[Integer alloc] initWithInt: 1];<br>&#9;[a Output];<br>&#9;[b Output];<br>&#9;return 0;<br>}</code><br>
 				至于Objective-C++, 两种都可以, 而C两种都不行。
             </div>
             <br><br><br>
