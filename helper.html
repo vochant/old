@@ -71,30 +71,124 @@
         </div>
         <div class="mdui-container">
             <div class="mdui-typo">
-                <h1 class="title mdui-text-color-theme">本站帮助<br><small>主要是用词方面的</small></h1>
+                <h1 class="title mdui-text-color-theme">本站帮助<br></h1>
             </div>
             <br><br>
             <div class="mdui-typo">
-                <h4 class="article-title">空间占用</h4><br>
-                首先,1KB=1024B是<strong>错误</strong>的,<br>是微软的程序员为了方便简写<strong>KiB</strong>而产生的.<br>
-                在本站,我们严格使用标准进率,即:<br>
-		<code>1KiB=1024B 1MiB=1024KiB 1GiB=1024MiB...</code><br>
-                <code>1KB=1000B  1MB=1000KB   1GB=1000MB  ...</code><br>
-		另外,这里提供两种空间容量的换算:<br>
-                1.00KiB&lt;=&gt;1.02KB 0.98KiB&lt;=&gt;1.00KB<br>
-                1.00MiB&lt;=&gt;1.05MB 0.95MiB&lt;=&gt;1.00MB<br>
-                1.00GiB&lt;=&gt;1.07GB 0.93GiB&lt;=&gt;1.00GB<br>
-                1.00TiB&lt;=&gt;1.10TB 0.91TiB&lt;=&gt;1.00TB<br><br><br>
-                <h4 class="article-title">体系结构和位数</h4><br>
-                首先,x64是<strong>不存在</strong>的.<br>
-                位数称32bit和64bit<br>
-                因为早期的知名32位CPU都是80?86的格式命名的,所以这套指令集被称为x86<br>
-                后面又诞生了兼容x86的64位指令集,称x86_64.<br>
-                同样,x64右是一个微软程序员简写造成的误会,本网站不会使用x64这个词汇.<br><br><br>
-                <h4 class="article-title">存储目录</h4><br>
-                尽管存储目录是虚拟的,但是分类还是很有必要的.<br>
-                这里使用Linux的命名方法,在根目录(/)下建立分支,以'/'划分层次.<br>
-                原因嘛,很简单,真的没有什么盘符可以分配的啊!
+                <h3 class="article-title">我可以借用这个网站的超文本、脚本和样式表吗?</h3><br>
+				可以. 本网站是开源项目, 所有文件可以在GitHub找到, 仓库是<a href="//github.com/vochant/vochant.github.io">vochant/vochant.github.io</a>. 本网站引用内容包括MDUI、VConsole、Base64.JS、MD5.JS、Marked、MathJax等, 另外Erudo曾经被引用过, 请自觉遵守子项目开源协议, 本项目完全自由无协议。<br>
+				<h3 class="article-title">我该如何本机安装Vochantia App?</h3><br>
+				请前往<a href="./">index.html</a>, 若浏览器支持会提示安装应用, Microsoft Edge(Chromium)可以安装任意网站. 或者您也可以使用Electron、Nativefier等工具或框架打包为一个基于Chromium和Node.JS的应用.<br>
+				<h3 class="article-title">我该如何联系作者?</h3><br>
+				e-mail: chenyuanxi1029@163.com/vochant@outlook.com, 微信: chenyuanxi1029, QQ: 506007790, XBOX(Minecraft): MRKNVOID, 洛谷: Mrkn_chenyx12, bilibili: MRKNVOID, pixiv: MRKNVOID<br>
+				<h3 class="article-title">作者van什么电动?</h3><br>
+				Minecraft国际服, VR Chat, CS:GO, 原神官服<br>
+				<h3 class="article-title">KB、KiB, MB、MiB这些有区别吗?</h3><br>
+				当然有……有i(bInary)的是1024进率, 没有i的是1000进率, 课本上是假的, Windows也是假的, 它们的KB、MB、GB……其实是KiB、MiB、GiB, 这些无非是很多人已经习惯的错拼. 站长追求严谨, 习惯就好。<br>
+				<h3 class="article-title">x86_64到底是x86还是x64? i686和i386有什么区别?</h3><br>
+				x86_64就是x64, 又称amd64。x86_64(x86的64位拓展指令集)和amd64都是官方的名称, x64是错拼, 但是很多人也习惯了没办法。至少不要说x32或者86bit这种低级错误! 至于i686, 它是指Pentium II及以后的i386, 是i386的子集。还有, 指令集和位数是两码事, 比如64bit就有amd64(x86_64)、IA64、aarch64(arm64)等。<br>
+				<h3 class="article-title">路径为什么是正斜杠分隔的? 为什么没有盘符?</h3><br>
+				本站采用UNIX路径规则, UNIX是从根目录(/)开始存储的, 磁盘是/dev/...，并且通过挂载(mount)以一种模式(读、写、特殊均可取或不取)映射到一个目录。通常有若干个分区分别映射到/和/usr/, 可移动设备通常映射到/mnt/.../, 如WSL(适用于Linux的Windows子系统)通常就把Windows盘符C:映射到UNIX路径/mnt/c/, 或MSYS的/c/和Cygwin的/cygdrive/c/。<br>
+				<h3 class="article-title">站长会什么编程语言?</h3><br>
+				C/C++, Python, Java, JavaScript(TypeScript), CSharp(C#), Objective C/C++, Rust, Lua, Brainf**k, Shell, Batch, MCFunction(MCScript)<br>
+				<h3 class="article-title">作者平常用什么工具链和目标?</h3><br>
+				单看C/C++, 工具链主要使用GCC, 但也有Clang、MSVC、ICC、EMCC甚至SCC。Windows下目标主要是MinGW64(C=msvcrt, CXX=libstdc++, x86_64), 但MinGW32(C=msvcrt, CXX=libstdc++, i686)、UCRT64(C=ucrt, CXX=libstdc++, x86_64)、Clang64(C=ucrt, CXX=libc++, x86_64)、Clang32(C=ucrt, CXX=libc++, i686)、ClangARM64(C=ucrt, CXX=libc++, aarch64)、MSYS(C=msvcrt, CXX=libstdc++)、Cygwin(C=Cygwin, CXX=libstc++)等的开发环境也都有, 难得会用。至于其他语言, 还能是什么呢?<br>
+				<h3 class="article-title">接上一问, CXX是什么?</h3><br>
+				C++=CXX=CPP=CC<s>=C艹</s>。<br>
+				注意: C++≠Objective-C≠Objective-C++! C++和Objective-C是对C的两种截然不同的面向对象拓展, 而Objective C++就是Objective C和C++的缝合怪, 同时兼容C、C++、Objective-C的语法。<br>
+			    举个例子, 创建一个简简单单的Integer类存储一个32位整数, 提供2个构造函数和1个输出函数, 创建2个然后分别输出。<br>
+			    C++是:<br>
+			    <code>
+					// C++
+
+					#include <bits/stdc++.h> // C++标准
+					
+					class Integer //类定义
+					{
+						private:
+							int x; // 类成员
+						
+						public:
+							Integer() // 空构造函数
+							{
+								x = 0;
+							}
+							
+						    Integer(int k) // 带一个参数的构造函数
+							{
+								x = k;
+							}
+							
+							~Integer() // 解构函数
+							{
+						
+							}
+							
+							void Output() // 实例方法
+							{
+								std::cout &lt;&lt; x &lt;&lt; std::endl;
+							}
+					};
+
+					int main() // 入口函数
+					{
+						Integer a, b(1); // 创建类
+						a.Output(); // 调用类成员函数
+						b.Output();
+						return 0;
+					}
+			    </code><br>
+				Objective-C是:<br>
+				<code>
+					// Objective-C
+
+					#import <Foundation/Foundation.h> // Objective-C标准, Objective-C常以import代替include
+					
+					@interface Integer : NSObject // 以默认权限为protected创建类, NSObject是Objective-C的根类
+					{
+						@private
+							int x; // 类成员
+					}
+					
+					-(id) init // 空构造函数
+					{
+						if (self = [super init]) // 等待父类(超类)初始化
+						{
+							x = 0;
+						}
+						return self;
+					}
+
+					-(id) initWithInt: (int) k // 含参构造函数
+					{
+						if (self = [super init])
+						{
+							x = k;
+						}
+						return self;
+					}
+
+					-(void) dealloc // 析构函数
+					{
+						[super dealloc]; // 得待父类(超类)析构
+					}
+
+					-(id) Output //实例方法
+					{
+						NSLog(@"%i", x);
+					}
+
+					@end // 结束定义类
+
+					int main() // 入口函数
+					{
+						Integer* a = [Integer new], b = [[Integer alloc] initWithInt: 1];
+						[a Output];
+						[b Output];
+						return 0;
+					}
+				</code><br>
+				至于Objective-C++, 两种都可以。
             </div>
             <br><br><br>
         </div>
