@@ -12,7 +12,7 @@ version 6.2.[%d]: Plugin GUI update I [waiting] & Plugin marketplace update I [w
 version 7.0.[%d]: Plugin update I [waiting] & Homepage update II [waiting]
 
 */
-var cacheName = 'version-6-0-6'
+var cacheName = 'version-7-0-0'
 
 var cacheList=[
     "/",
@@ -20,13 +20,14 @@ var cacheList=[
     "web/js/index.js",
     "web/js/mdui.min.js",
     "web/css/mdui.min.css",
-    "helper.html",
-    "helper",
-    "web/fonts/roboto/Roboto-Regular.woff2",
-    "web/fonts/roboto/Roboto-Bold.woff2",
-    "web/fonts/roboto/Roboto-Medium.woff2",
+    //"helper.html",
+    //"helper",
+    //"web/fonts/roboto/Roboto-Regular.woff2",
+    //"web/fonts/roboto/Roboto-Bold.woff2",
+    //"web/fonts/roboto/Roboto-Medium.woff2",
     "web/icons/material-icons/MaterialIcons-Regular.woff2",
-    "web/img/old_website.jpeg"
+    "web/img/old_website.jpeg",
+    "web/font/genshin-impact.ttf"
 ]
 
 // Service Worker 注册完成事件，写入缓存
