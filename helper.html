@@ -98,9 +98,9 @@
 		注意: C++≠Objective-C≠Objective-C++! C++和Objective-C是对C的两种截然不同的面向对象拓展, 而Objective C++就是Objective C和C++的缝合怪, 同时兼容C、C++、Objective-C的语法。<br>
 	    	举个例子, 创建一个简简单单的Integer类存储一个32位整数, 提供2个构造函数和1个输出函数, 创建2个然后分别输出。<br>
 	    	C++是:<br>
-	    	<code>// C++<br><br>#include &lt;bits/stdc++.h&gt; // C++标准<br><br>class Integer //类定义<br>{<br>&emsp;private:<br>&emsp;&emsp;int x; // 类成员<br><br>&emsp;&emsp;public:<br>&emsp;&emsp;Integer() // 空构造函数<br>&emsp;&emsp;{<br>&emsp;&emsp;&emsp;x = 0;<br>&emsp;&emsp;}<br><br>&emsp;&emsp;Integer(int k) // 带一个参数的构造函数<br>&emsp;&emsp;{<br>&emsp;&emsp;&emsp;x = k;<br>&emsp;&emsp;}<br><br>&emsp;&emsp;~Integer() // 解构函数<br><br>&emsp;&emsp;{ }<br><br>&emsp;&emsp;void Output() // 实例方法<br>&emsp;&emsp;{<br>&emsp;&emsp;&emsp;std::cout &lt;&lt; x &lt;&lt; std::endl;<br>&emsp;&emsp;}<br>};<br><br>int main() // 入口函数<br>{<br>&emsp;Integer a, b(1); // 创建类<br>&emsp;a.Output(); // 调用类成员函数<br>&emsp;b.Output();<br>&emsp;return 0;<br>}</code><br>
+	    	<img class="mdui-img-fluided mdui-img-rounded" src="./web/img/cpp.png">
 		Objective-C是:<br>
-		<code>// Objective-C<br><br>#import &lt;Foundation/Foundation.h&gt; // Objective-C标准, Objective-C常以import代替include<br><br>@interface Integer : NSObject // 以默认权限为protected创建类, NSObject是Objective-C的根类<br>{<br>&emsp;@private<br>&emsp;&emsp;int x; // 类成员<br>}<br>-(id) init // 空构造函数<br>{<br>&emsp;if (self = [super init]) // 等待父类(超类)初始化<br>&emsp;{<br>&emsp;&emsp;x = 0;<br>&emsp;}<br>&emsp;return self;<br>}<br><br>-(id) initWithInt: (int) k // 含参构造函数<br>{<br>&emsp;if (self = [super init])<br>&emsp;{<br>&emsp;&emsp;x = k;<br>&emsp;}<br>&emsp;return self;<br>}<br><br>-(void) dealloc // 析构函数<br>{<br>&emsp;[super dealloc]; // 得待父类(超类)析构<br>}<br><br>-(id) Output //实例方法<br>{<br>&emsp;NSLog(@"%i", x);<br>}<br><br>@end // 结束定义类<br><br>int main() // 入口函数<br>{<br>&emsp;Integer* a = [Integer new], b = [[Integer alloc] initWithInt: 1];<br>&emsp;[a Output];<br>&emsp;[b Output];<br>&emsp;return 0;<br>}</code><br>
+	    	<img class="mdui-img-fluided mdui-img-rounded" src="./web/img/objc.png">
 		至于Objective-C++, 两种都可以, 而C两种都不行。
             </div>
             <br><br><br>
