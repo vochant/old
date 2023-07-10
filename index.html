@@ -77,53 +77,18 @@
         </div>
         <div class="mdui-container">
             <div class="mdui-typo">
-                <h1 class="title mdui-text-color-theme">欢迎访问Vochantia!<br><small>由Vochant构建的网站</small></h1>
+                <h1 class="title mdui-text-color-theme">欢迎访问Vochantia!<br><small>由Vochant构建的个人网站</small></h1>
             </div>
             <br><br>
-            <div class="mdui-container">
-                <div class="mdui-card mdui-col-xs-5">
-                    <div class="mdui-card-media">
-                        <img src="./web/img/old_website.jpeg"/>
-                        <div class="mdui-card-media-covered">
-                            <div class="mdui-card-primary">
-                                <div class="mdui-card-primary-title">寻找旧网站?</div>
-                                <div class="mdui-card-primary-subtitle">联系已经断开</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mdui-card-actions">
-                        <a class="mdui-btn mdui-ripple mdui-ripple-white mdui-text-color-pink" href="javascript:mdui.alert('不要尝试了已经被我删了啊','提示')">提示</a>
-                    </div>
-                </div>
-            </div><br><br><br>
-            <div class="mdui-row">
-                <div class="mdui-container mdui-col-xs-6">
-                    <div class="mdui-container mdui-shadow-3" style="padding:15px">
-                        <h4 class="article-title">下载客户端</h4>
-                        一般地,我不推荐下载客户端,因为常见的浏览器(如Microsoft Edge/Google Chrome)甚至某些国产浏览器(比如华为浏览器)都正常PWA(n.渐进式网页应用,Progressive Web Apps),相较于客户端,PWA体积小,跨平台,部分功能脱离网络连接.除非您的浏览器经过几次刷新后本页面仍然无法跳出安装提示框,否则尽量不要选择.当然,比起浏览器访问,客户端也许不错.
-                        <br>
-                        对于iOS或iPadOS用户,除非你有足够的水平越狱或者自行签名应用,否则请放弃尝试,iOS版(ipa应用)没有自带签名,因为我没有购买开发者证书的经济条件.
-                        <br><br><br><br>
-                        <a class="mdui-btn mdui-color-theme-accent mdui-btn-raised mdui-ripple mdui-ripple-white" href="./download">转到下载</a>
-                    </div>
-                </div>
-                <div class="mdui-container mdui-col-xs-6">
-                    <div class="mdui-container mdui-shadow-3" style="padding:15px">
-                        <h4 class="article-title">Special Pages</h4>
-                        Special Pages是本网站提供单独页面或页面组的方式,由于网站开发初期滥用纯HTML而很少使用JavaScript,导致网站统一修改困难,并且分组太多容易使网站臃肿不堪,故我把很多页面转移到了Special Pages当中,以方便用户使用网站的全部功能.
-                        <br><br><br><br>
-                        <a class="mdui-btn mdui-color-theme-accent mdui-btn-raised mdui-ripple mdui-ripple-white" href="./sp/">转到SPM</a>
-                    </div>
-                </div>
-            </div>
+            <br><br><br>
+            <h3 class="article-title">推荐网页</h3><br>
+            Minecraft Online 1.5.2: <a href="./web/webapps/eaglercraft/">IMC Eaglercraft</a><br><br>
+            找不到想要的网页?进入<a href="./sp/">Special Pages</a>以查看全部未分类的非隐藏网页!
             <br><br><br>
             <h4 class="article-title">计划功能</h4><br>
             <ul class="mdui-typo">
                 <li>
                     博客 待实现
-                </li>
-                <li>
-                    信奥 待实现
                 </li>
                 <li>
                     链接 待实现
@@ -149,7 +114,7 @@
                         <tr>
                             <td><a href="https://zhuanlan.zhihu.com/p/367276658">Microsoft Edge Legacy</a></td>
                             <td>EdgeHTML</td>
-                            <td>完全兼容</td>
+                            <td>除vConsole和Game</td>
                         </tr>
                         <tr>
                             <td><a href="https://www.google.cn/chrome/index.html">Google Chrome</a></td>
@@ -159,7 +124,7 @@
                         <tr>
                             <td><a href="http://www.firefox.com.cn/">Mozilla Firefox</a></td>
                             <td>Gecko</td>
-                            <td>完全兼容</td>
+                            <td>除Game</td>
                         </tr>
                         <tr>
                             <td><a href="https://www.apple.com.cn/safari/">Apple Safari</a></td>
@@ -169,7 +134,7 @@
                         <tr>
                             <td><a href="https://www.microsoft.com/zh-cn/download/internet-explorer.aspx">Internet Explorer</a></td>
                             <td>Trident</td>
-                            <td>需要启用JavaScript</td>
+                            <td>需要启用JavaScript, 除VConsole和Game</td>
                         </tr>
                     </tbody>
                 </table>
@@ -178,8 +143,7 @@
             <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme" onclick="javascript:mdui.alert('当前浏览器JavaScript兼容性正常!<br>布局兼容性请根据显示状况自行判断.','提示信息');">测试兼容性</button>
             <br><br>
             <div class="mdui-typo">
-                若正常显示弹窗则JavaScript功能正常.<br>
-                注:Trident=IE=MSHTML<br>Blink是Chromium中的重要部分<br>EdgeHTML是Trident的衍生及优化.<br>Blink基于WebKit.<br>WebKit基于KHTML.
+                若正常显示弹窗则常规JavaScript功能正常, 可以使用网页框架MDUI.<br>
             </div>
             <br><br><br>
         </div>
