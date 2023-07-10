@@ -76,32 +76,32 @@
             <br><br>
             <div class="mdui-typo">
                 <h3 class="article-title">我可以借用这个网站的超文本、脚本和样式表吗?</h3><br>
-				可以. 本网站是开源项目, 所有文件可以在GitHub找到, 仓库是<a href="//github.com/vochant/vochant.github.io">vochant/vochant.github.io</a>. 本网站引用内容包括MDUI、VConsole、Base64.JS、MD5.JS、Marked、MathJax等, 另外Erudo曾经被引用过, 请自觉遵守子项目开源协议, 本项目完全自由无协议。<br>
-				<h3 class="article-title">我该如何本机安装Vochantia App?</h3><br>
-				请前往<a href="./">index.html</a>, 若浏览器支持会提示安装应用, Microsoft Edge(Chromium)可以安装任意网站. 或者您也可以使用Electron、Nativefier等工具或框架打包为一个基于Chromium和Node.JS的应用.<br>
-				<h3 class="article-title">我该如何联系作者?</h3><br>
-				e-mail: chenyuanxi1029@163.com/vochant@outlook.com, 微信: chenyuanxi1029, QQ: 506007790, XBOX(Minecraft): MRKNVOID, 洛谷: Mrkn_chenyx12, bilibili: MRKNVOID, pixiv: MRKNVOID<br>
-				<h3 class="article-title">作者van什么电动?</h3><br>
-				Minecraft国际服, VR Chat, CS:GO, 原神官服<br>
-				<h3 class="article-title">KB、KiB, MB、MiB这些有区别吗?</h3><br>
-				当然有……有i(bInary)的是1024进率, 没有i的是1000进率, 课本上是假的, Windows也是假的, 它们的KB、MB、GB……其实是KiB、MiB、GiB, 这些无非是很多人已经习惯的错拼. 站长追求严谨, 习惯就好。<br>
-				<h3 class="article-title">x86_64到底是x86还是x64? i686和i386有什么区别?</h3><br>
-				x86_64就是x64, 又称amd64。x86_64(x86的64位拓展指令集)和amd64都是官方的名称, x64是错拼, 但是很多人也习惯了没办法。至少不要说x32或者86bit这种低级错误! 至于i686, 它是指Pentium II及以后的i386, 是i386的子集。还有, 指令集和位数是两码事, 比如64bit就有amd64(x86_64)、IA64、aarch64(arm64)等。<br>
-				<h3 class="article-title">路径为什么是正斜杠分隔的? 为什么没有盘符?</h3><br>
-				本站采用UNIX路径规则, UNIX是从根目录(/)开始存储的, 磁盘是/dev/...，并且通过挂载(mount)以一种模式(读、写、特殊均可取或不取)映射到一个目录。通常有若干个分区分别映射到/和/usr/, 可移动设备通常映射到/mnt/.../, 如WSL(适用于Linux的Windows子系统)通常就把Windows盘符C:映射到UNIX路径/mnt/c/, 或MSYS的/c/和Cygwin的/cygdrive/c/。<br>
-				<h3 class="article-title">站长会什么编程语言?</h3><br>
-				C/C++, Python, Java, JavaScript(TypeScript), CSharp(C#), Objective C/C++, Rust, Lua, Brainf**k, Shell, Batch, MCFunction(MCScript)<br>
-				<h3 class="article-title">作者平常用什么工具链和目标?</h3><br>
-				单看C/C++, 工具链主要使用GCC, 但也有Clang、MSVC、ICC、EMCC甚至SCC。Windows下目标主要是MinGW64(C=msvcrt, CXX=libstdc++, x86_64), 但MinGW32(C=msvcrt, CXX=libstdc++, i686)、UCRT64(C=ucrt, CXX=libstdc++, x86_64)、Clang64(C=ucrt, CXX=libc++, x86_64)、Clang32(C=ucrt, CXX=libc++, i686)、ClangARM64(C=ucrt, CXX=libc++, aarch64)、MSYS(C=msvcrt, CXX=libstdc++)、Cygwin(C=Cygwin, CXX=libstc++)等的开发环境也都有, 难得会用。至于其他语言, 还能是什么呢?<br>
-				<h3 class="article-title">接上一问, CXX是什么?</h3><br>
-				C++=CXX=CPP=CC<s>=C艹</s>。<br>
-				注意: C++≠Objective-C≠Objective-C++! C++和Objective-C是对C的两种截然不同的面向对象拓展, 而Objective C++就是Objective C和C++的缝合怪, 同时兼容C、C++、Objective-C的语法。<br>
-			    举个例子, 创建一个简简单单的Integer类存储一个32位整数, 提供2个构造函数和1个输出函数, 创建2个然后分别输出。<br>
-			    C++是:<br>
-			    <code>// C++<br><br>#include &lt;bits/stdc++.h&gt; // C++标准<br><br>class Integer //类定义<br>{<br>&#9;private:<br>&#9;&#9;int x; // 类成员<br><br>&#9;&#9;public:<br>&#9;&#9;Integer() // 空构造函数<br>&#9;&#9;{<br>&#9;&#9;&#9;x = 0;<br>&#9;&#9;}<br><br>&#9;&#9;Integer(int k) // 带一个参数的构造函数<br>&#9;&#9;{<br>&#9;&#9;&#9;x = k;<br>&#9;&#9;}<br><br>&#9;&#9;~Integer() // 解构函数<br><br>&#9;&#9;{ }<br><br>&#9;&#9;void Output() // 实例方法<br>&#9;&#9;{<br>&#9;&#9;&#9;std::cout &lt;&lt; x &lt;&lt; std::endl;<br>&#9;&#9;}<br>};<br><br>int main() // 入口函数<br>{<br>&#9;Integer a, b(1); // 创建类<br>&#9;a.Output(); // 调用类成员函数<br>&#9;b.Output();<br>&#9;return 0;<br>}</code><br>
-				Objective-C是:<br>
-				<code>// Objective-C<br><br>#import &lt;Foundation/Foundation.h&gt; // Objective-C标准, Objective-C常以import代替include<br><br>@interface Integer : NSObject // 以默认权限为protected创建类, NSObject是Objective-C的根类<br>{<br>&#9;@private<br>&#9;&#9;int x; // 类成员<br>}<br>-(id) init // 空构造函数<br>{<br>&#9;if (self = [super init]) // 等待父类(超类)初始化<br>&#9;{<br>&#9;&#9;x = 0;<br>&#9;}<br>&#9;return self;<br>}<br><br>-(id) initWithInt: (int) k // 含参构造函数<br>{<br>&#9;if (self = [super init])<br>&#9;{<br>&#9;&#9;x = k;<br>&#9;}<br>&#9;return self;<br>}<br><br>-(void) dealloc // 析构函数<br>{<br>&#9;[super dealloc]; // 得待父类(超类)析构<br>}<br><br>-(id) Output //实例方法<br>{<br>&#9;NSLog(@"%i", x);<br>}<br><br>@end // 结束定义类<br><br>int main() // 入口函数<br>{<br>&#9;Integer* a = [Integer new], b = [[Integer alloc] initWithInt: 1];<br>&#9;[a Output];<br>&#9;[b Output];<br>&#9;return 0;<br>}</code><br>
-				至于Objective-C++, 两种都可以, 而C两种都不行。
+		可以. 本网站是开源项目, 所有文件可以在GitHub找到, 仓库是<a href="//github.com/vochant/vochant.github.io">vochant/vochant.github.io</a>. 本网站引用内容包括MDUI、VConsole、Base64.JS、MD5.JS、Marked、MathJax等, 另外Erudo曾经被引用过, 请自觉遵守子项目开源协议, 本项目完全自由无协议。<br>
+		<h3 class="article-title">我该如何本机安装Vochantia App?</h3><br>
+		请前往<a href="./">index.html</a>, 若浏览器支持会提示安装应用, Microsoft Edge(Chromium)可以安装任意网站. 或者您也可以使用Electron、Nativefier等工具或框架打包为一个基于Chromium和Node.JS的应用.<br>
+		<h3 class="article-title">我该如何联系作者?</h3><br>
+		e-mail: chenyuanxi1029@163.com/vochant@outlook.com, 微信: chenyuanxi1029, QQ: 506007790, XBOX(Minecraft): MRKNVOID, 洛谷: Mrkn_chenyx12, bilibili: MRKNVOID, pixiv: MRKNVOID<br>
+		<h3 class="article-title">作者van什么电动?</h3><br>
+		Minecraft国际服, VR Chat, CS:GO, 原神官服<br>
+		<h3 class="article-title">KB、KiB, MB、MiB这些有区别吗?</h3><br>
+		当然有……有i(bInary)的是1024进率, 没有i的是1000进率, 课本上是假的, Windows也是假的, 它们的KB、MB、GB……其实是KiB、MiB、GiB, 这些无非是很多人已经习惯的错拼. 站长追求严谨, 习惯就好。<br>
+		<h3 class="article-title">x86_64到底是x86还是x64? i686和i386有什么区别?</h3><br>
+		x86_64就是x64, 又称amd64。x86_64(x86的64位拓展指令集)和amd64都是官方的名称, x64是错拼, 但是很多人也习惯了没办法。至少不要说x32或者86bit这种低级错误! 至于i686, 它是指Pentium II及以后的i386, 是i386的子集。还有, 指令集和位数是两码事, 比如64bit就有amd64(x86_64)、IA64、aarch64(arm64)等。<br>
+		<h3 class="article-title">路径为什么是正斜杠分隔的? 为什么没有盘符?</h3><br>
+		本站采用UNIX路径规则, UNIX是从根目录(/)开始存储的, 磁盘是/dev/...，并且通过挂载(mount)以一种模式(读、写、特殊均可取或不取)映射到一个目录。通常有若干个分区分别映射到/和/usr/, 可移动设备通常映射到/mnt/.../, 如WSL(适用于Linux的Windows子系统)通常就把Windows盘符C:映射到UNIX路径/mnt/c/, 或MSYS的/c/和Cygwin的/cygdrive/c/。<br>
+		<h3 class="article-title">站长会什么编程语言?</h3><br>
+		C/C++, Python, Java, JavaScript(TypeScript), CSharp(C#), Objective C/C++, Rust, Lua, Brainf**k, Shell, Batch, MCFunction(MCScript)<br>
+		<h3 class="article-title">作者平常用什么工具链和目标?</h3><br>
+		单看C/C++, 工具链主要使用GCC, 但也有Clang、MSVC、ICC、EMCC甚至SCC。Windows下目标主要是MinGW64(C=msvcrt, CXX=libstdc++, x86_64), 但MinGW32(C=msvcrt, CXX=libstdc++, i686)、UCRT64(C=ucrt, CXX=libstdc++, x86_64)、Clang64(C=ucrt, CXX=libc++, x86_64)、Clang32(C=ucrt, CXX=libc++, i686)、ClangARM64(C=ucrt, CXX=libc++, aarch64)、MSYS(C=msvcrt, CXX=libstdc++)、Cygwin(C=Cygwin, CXX=libstc++)等的开发环境也都有, 难得会用。至于其他语言, 还能是什么呢?<br>
+		<h3 class="article-title">接上一问, CXX是什么?</h3><br>
+		C++=CXX=CPP=CC<s>=C艹</s>。<br>
+		注意: C++≠Objective-C≠Objective-C++! C++和Objective-C是对C的两种截然不同的面向对象拓展, 而Objective C++就是Objective C和C++的缝合怪, 同时兼容C、C++、Objective-C的语法。<br>
+	    	举个例子, 创建一个简简单单的Integer类存储一个32位整数, 提供2个构造函数和1个输出函数, 创建2个然后分别输出。<br>
+	    	C++是:<br>
+	    	<code>// C++<br><br>#include &lt;bits/stdc++.h&gt; // C++标准<br><br>class Integer //类定义<br>{<br>&emsp;private:<br>&emsp;&emsp;int x; // 类成员<br><br>&emsp;&emsp;public:<br>&emsp;&emsp;Integer() // 空构造函数<br>&emsp;&emsp;{<br>&emsp;&emsp;&emsp;x = 0;<br>&emsp;&emsp;}<br><br>&emsp;&emsp;Integer(int k) // 带一个参数的构造函数<br>&emsp;&emsp;{<br>&emsp;&emsp;&emsp;x = k;<br>&emsp;&emsp;}<br><br>&emsp;&emsp;~Integer() // 解构函数<br><br>&emsp;&emsp;{ }<br><br>&emsp;&emsp;void Output() // 实例方法<br>&emsp;&emsp;{<br>&emsp;&emsp;&emsp;std::cout &lt;&lt; x &lt;&lt; std::endl;<br>&emsp;&emsp;}<br>};<br><br>int main() // 入口函数<br>{<br>&emsp;Integer a, b(1); // 创建类<br>&emsp;a.Output(); // 调用类成员函数<br>&emsp;b.Output();<br>&emsp;return 0;<br>}</code><br>
+		Objective-C是:<br>
+		<code>// Objective-C<br><br>#import &lt;Foundation/Foundation.h&gt; // Objective-C标准, Objective-C常以import代替include<br><br>@interface Integer : NSObject // 以默认权限为protected创建类, NSObject是Objective-C的根类<br>{<br>&emsp;@private<br>&emsp;&emsp;int x; // 类成员<br>}<br>-(id) init // 空构造函数<br>{<br>&emsp;if (self = [super init]) // 等待父类(超类)初始化<br>&emsp;{<br>&emsp;&emsp;x = 0;<br>&emsp;}<br>&emsp;return self;<br>}<br><br>-(id) initWithInt: (int) k // 含参构造函数<br>{<br>&emsp;if (self = [super init])<br>&emsp;{<br>&emsp;&emsp;x = k;<br>&emsp;}<br>&emsp;return self;<br>}<br><br>-(void) dealloc // 析构函数<br>{<br>&emsp;[super dealloc]; // 得待父类(超类)析构<br>}<br><br>-(id) Output //实例方法<br>{<br>&emsp;NSLog(@"%i", x);<br>}<br><br>@end // 结束定义类<br><br>int main() // 入口函数<br>{<br>&emsp;Integer* a = [Integer new], b = [[Integer alloc] initWithInt: 1];<br>&emsp;[a Output];<br>&emsp;[b Output];<br>&emsp;return 0;<br>}</code><br>
+		至于Objective-C++, 两种都可以, 而C两种都不行。
             </div>
             <br><br><br>
         </div>
