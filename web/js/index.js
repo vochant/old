@@ -43,20 +43,6 @@ function floader(filename,func)
 	}
 }
 
-function Spliter(snum)
-{
-	var rawst="2|s|r|0|1|3";
-	var spl=rawst.split("|");
-	return spl[snum];
-}
-
-function api_generateKey(kvar)
-{
-	var _rei=unbase('VkZaU1dsQlJQVDA9',kvar%11);
-	var _rej=Number(_rei);
-	return unbase(Load_base(kvar),_rej);
-}
-
 function Random(iLimit)
 {
 	return Math.floor(Math.random()*(iLimit+1));
@@ -138,51 +124,12 @@ function imsg(s)
 	mdui.snackbar({message:s,position:'bottom'});
 }
 
-function UpdatePluginCkr(xhrString)
-{
-	var latestVersion=Number(JSON.parse(xhrString).VersionCode);
-	if(latestVersion>Number(PlugConf.VersionCode))
-	{
-		if(PlugConf.Type=="auto")
-		{
-			floader(PlugConf.ScriptHost,function(__x){
-				window.localStorage["_userplugincode_"+i]=__x;
-			});
-			floader(PlugConf.ConfigHost,function(__x){
-				window.localStorage["_userpluginhead_"+i]=__x;
-			});
-			Plist[i][0]=window.localStorage["_userplugincode_"+i];
-			Plist[i][1]=window.localStorage["_userpluginhead_"+i];
-			PlugConf=JSON.parse(Plist[i][1]);
-			imsg("插件"+PlugConf.DisplayName+"已更新");
-		}
-		else if(PlugConf.Type=="redirect")
-		{
-			if(PlugConf.DisableWhenTimedOut=="true")Plist[i][0]="console.log('A plugin is diabled because version is too old.');";
-			else
-			{
-				var URL__="https://"+window.location.href.split("/")[2]+"/plugins/updater?id="+i;
-				if(doCheckUpgrade) mdui.alert("插件"+PlugConf.DisplayName+"的更新可用,点<a href=\""+URL__+"\">我</a>更新.");
-			}
-			//window.location.href="https://"+window.location.href.split("/")[2]+"/plugins/updater?ch="+Base64.encode(PlugConf.ConfigHost)+"&sh="+Base64.encode(PlugConf.ScriptHost)+"&cv="+Base64.encode(PlugConf.DisplayVersion);
-		}
-		else
-		{
-			if(PlugConf.DisableWhenTimedOut=="true")Plist[i][0]="console.log('A plugin is diabled because version is too old.');";
-			if(doCheckUpgrade) window.open("https://"+window.location.href.split("/")[2]+"/plugins/updater?id="+i);
-		}
-	}
-}
-
 function GetPluginList()
 {
 	if(!window.localStorage["_userplugin.c"])
 	{
 		window.localStorage["_userplugin.c"]=0;
-		window.localStorage["_latest_version_check"]=Dateid()-1+"";
 	}
-	var doCheckUpgrade=Number(window.localStorage["_latest_version_check"])!=Dateid();
-	window.localStorage["_latest_version_check"]=Dateid()+"";
 	PCount=Number(window.localStorage["_userplugin.c"]);
 	for(i=0;i<PCount;i++)
 	{
@@ -190,22 +137,9 @@ function GetPluginList()
 		Plist[i][0]=window.localStorage["_userplugincode_"+i];
 		Plist[i][1]=window.localStorage["_userpluginhead_"+i];
 		PlugConf=JSON.parse(Plist[i][1]);
-		if(PlugConf.EnableUpgrade=="true")
-		{
-			floader(PlugConf.ConfigHost,UpdatePluginCkr);
-		}
 		if(PlugConf.EnableBefore=="true")
 		{
-			if(md5(BaseII(Base64.decode(PlugConf.AuthCode)+PlugConf.Namespace))!=PlugConf.AuthTarget)
-			{
-				console.error("Cannot auth plugin.");
-				PlugConf.EnableBefore="false";
-				Plist[i][1]=JSON.stringify(PlugConf);
-			}
-			else
-			{
-				Exec(Plist[i][0]);
-			}
+			Exec(Plist[i][0]);
 		}
 	}
 }
